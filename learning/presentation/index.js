@@ -104,19 +104,19 @@ export default class Presentation extends React.Component {
                     </Text>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
-                    <Link href="https://github.com/yashdalfthegray" textColor="tertiary" textSize={48} margin="24px">
+                    <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
                     </Link>
-                    <Link href="https://twitter.com/yashdalfthegray" textColor="tertiary" textSize={48} margin="24px">
+                    <Link href="https://twitter.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Twitter
                     </Link>
-                    <Link href="https://yashkulshrestha.carrd.co" textColor="tertiary" textSize={48} margin="24px">
+                    <Link href="https://yashkulshrestha.carrd.co" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Website
                     </Link>
                     <Text textColor="secondary" textSize={48} margin="24px ">
                         ~~
                     </Text>
-                    <Link href="https://github.com/yashdalfthegray" textColor="tertiary" textSize={48} margin="24px">
+                    <Link href="https://github.com/YashdalfTheGray/talks/blob/master/learning/notes.md" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Presentation Notes
                     </Link>
                 </Slide>
