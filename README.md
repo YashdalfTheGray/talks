@@ -1,5 +1,5 @@
 # talks
-Various talks
+Home to various talks, proposed ideas and abstracts.
 
 ## Managing your learning
 
