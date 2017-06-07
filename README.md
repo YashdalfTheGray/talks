@@ -4,7 +4,7 @@ various proposed talk ideas
 ## Managing your learning
 
 * [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/learning/README.md)
-* [Outline](https://github.com/YashdalfTheGray/talks/blob/master/learning/outline.md)
+* [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/learning/notes.md)
 
 ## Using Slack, Hubot and IoT to create a virtual house assistant
 
