@@ -17,6 +17,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
     ],
+    stats: {
+        colors: true
+    },
     module: {
         loaders: [
             {

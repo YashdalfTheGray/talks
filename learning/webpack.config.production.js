@@ -23,6 +23,9 @@ module.exports = {
             }
         })
     ],
+    stats: {
+        colors: true
+    },
     module: {
         loaders: [
             {
