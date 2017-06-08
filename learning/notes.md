@@ -79,8 +79,8 @@ I'm happy to answer questions about my journey. I also want to point out that it
 
 ## Sources
 
-* http://drksephy.github.io/2015/07/02/commit/
-* http://jamesclear.com/new-habit
-* https://en.wikipedia.org/wiki/Reward_system
-* https://en.wikipedia.org/wiki/Dopamine
-* https://en.wikipedia.org/wiki/ILR_scale
+* [http://drksephy.github.io/2015/07/02/commit/]
+* [http://jamesclear.com/new-habit]
+* [https://en.wikipedia.org/wiki/Reward_system]
+* [https://en.wikipedia.org/wiki/Dopamine]
+* [https://en.wikipedia.org/wiki/ILR_scale]
