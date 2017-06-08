@@ -89,7 +89,7 @@ export default class Presentation extends React.Component {
                     </Text>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
-                    <Image src={images.trello} width="60%" />
+                    <Image src={images.trello} width="50%" />
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Text textColor="tertiary" textSize={120}>
