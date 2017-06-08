@@ -79,8 +79,8 @@ I'm happy to answer questions about my journey. I also want to point out that it
 
 ## Sources
 
-* [http://drksephy.github.io/2015/07/02/commit/]
-* [http://jamesclear.com/new-habit]
-* [https://en.wikipedia.org/wiki/Reward_system]
-* [https://en.wikipedia.org/wiki/Dopamine]
-* [https://en.wikipedia.org/wiki/ILR_scale]
+* [500 Day Commit Streak](http://drksephy.github.io/2015/07/02/commit/)
+* [How Long Does it Actually Take to Form a New Habit?](http://jamesclear.com/new-habit)
+* [Reward System](https://en.wikipedia.org/wiki/Reward_system)
+* [Dopamine](https://en.wikipedia.org/wiki/Dopamine)
+* [ILR Scale](https://en.wikipedia.org/wiki/ILR_scale)
