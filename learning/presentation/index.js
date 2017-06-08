@@ -119,7 +119,7 @@ export default class Presentation extends React.Component {
                     <Text textColor="secondary" textSize={48} margin="24px ">
                         ~~
                     </Text>
-                    <Link href="https://github.com/YashdalfTheGray/talks/blob/master/learning/notes.md" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                    <Link href="https://yashdalfthegray.github.io/talks/learning/notes" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Presentation Notes
                     </Link>
                 </Slide>
