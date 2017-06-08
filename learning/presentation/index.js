@@ -22,15 +22,18 @@ const images = {
 
 preloader(images);
 
-const theme = createTheme({
-    primary: '#03A9FC',
-    secondary: '#1F2022',
-    tertiary: '#FFFFFF',
-    quartenary: '#CECECE'
-}, {
-    primary: 'Roboto',
-    secondary: 'Helvetica'
-});
+const theme = createTheme(
+    {
+        primary: '#FFF',
+        secondary: '#1F2022',
+        tertiary: '#03A9FC',
+        quarternary: '#03A9FC'
+    },
+    {
+        primary: 'Roboto',
+        secondary: 'Helvetica'
+    }
+);
 
 export default class Presentation extends React.Component {
     render() {
