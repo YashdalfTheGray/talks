@@ -3,7 +3,7 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Managing your learning
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/learning/abstract)
+* [Abstract](https://yashdalfthegray.github.io/talks/learning/notes)
 * [Presentation](https://yashdalfthegray.github.io/talks/learning)
 * [Presentation Notes](https://yashdalfthegray.github.io/talks/learning/notes)
 
