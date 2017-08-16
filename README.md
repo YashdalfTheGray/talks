@@ -18,4 +18,4 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Test all the Javascript
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/abstract)
+* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/README.md)
