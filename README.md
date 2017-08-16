@@ -1,4 +1,5 @@
 # talks
+
 Home to various talks, proposed ideas and abstracts.
 
 ## Managing your learning
@@ -14,3 +15,7 @@ Home to various talks, proposed ideas and abstracts.
 ## Creating a smart HVAC system with Particle Photons
 
 * [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/hvac/README.md)
+
+## Test all the Javascript
+
+* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/abstract)
