@@ -18,5 +18,5 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Test all the Javascript
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/abstract.md)
-* [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/testing/notes.md)
+* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/abstract)
+* [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/testing/notes)
