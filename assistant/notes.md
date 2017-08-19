@@ -24,4 +24,4 @@ Getting started, chat adapters, running locally, running on Heroku, Docker?
 
 Setting up a slack team, adding your bot, giving it a cool name, constructing help
 
-## That's all folks!
+## That's all folks
