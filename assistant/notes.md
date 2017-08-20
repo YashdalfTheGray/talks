@@ -18,7 +18,48 @@ As mentioned above, we'll connect smart devices in our house to GitHub's Hubot p
 
 ## IoT
 
-Particle, Raspberry Pi, Arduino
+First, we will look at how to make the house smarter. Like I mentioned, we could buy a bunch of smart devices but that would be a lot of money and would also make for a boring talk. Instead, let's see how the sausage is made. Now we could do this with many different platforms - Arduino, Raspberry Pi, 8266 but we'll go for the easiest setup with Particle. Particle offers a small, wi-fi connected board called Proton which is programmed similarly to an Arduino. To make a smart device, we'll connect it to some sensors like  DHT11 (digital temperature and humidity) and a photocell and set up the Photon to collect data from the sensors.
+
+Once we've got the sensors connected, we'll write some Particle C++ code to wire our sensors up to the cloud. The code to set up the Particle Photon is included below.
+
+```cpp
+// include the Adafruit DHT11/DHT22 library
+#include <Adafruit_DHT.h>
+#include "Adafruit_DHT/Adafruit_DHT.h"
+
+// define some constants
+#define DHTPIN 5
+#define DHTTYPE DHT11
+
+// declare variables to hold our sensor values
+int photoResistorValue = 0;
+int tempSensorValue = 0;
+int humiditySensorValue = 0;
+
+// declare a DHT sensor type so that we can get data from it
+DHT dht(DHTPIN, DHTTYPE);
+
+// this method runs only once when the device boots up
+void setup() {
+    // register variables with the Particle cloud
+    Particle.variable("lightSensor", photoResistorValue));
+    Particle.variable("temperature", tempSensorValue));
+    Particle.variable("humidity", humiditySensorValue));
+
+    // Set up the sensors so that they can start logging
+    pinMode(A0, INPUT);
+    dht.begin();
+}
+
+// this method runs constantly
+void loop() {
+    // get readings from the connected sensors every second
+    photoResistorValue = analogRead(A0);
+    tempSensorValue = dht.getTempFarenheit();
+    humiditySensorValue = dht.getHumidity();
+    delay(1000);
+}
+```
 
 ## Hubot
 
