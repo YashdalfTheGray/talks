@@ -63,7 +63,7 @@ void loop() {
 
 ## Hubot
 
-Getting started, chat adapters, running locally, running on Heroku, Docker?
+Hubot is a project from GitHub which they use to automate their chatbot actions. They recently rewrote the underlying infrastructure and open sourced it so that anyone can get a Hubot instance up and running. 
 
 ## Slack
 
