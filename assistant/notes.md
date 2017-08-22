@@ -63,7 +63,16 @@ void loop() {
 
 ## Hubot
 
-Hubot is a project from GitHub which they use to automate their chatbot actions. They recently rewrote the underlying infrastructure and open sourced it so that anyone can get a Hubot instance up and running. 
+Hubot is a project from GitHub which they use to automate their chatbot actions. They recently rewrote the underlying infrastructure and open sourced it so that anyone can get a Hubot instance up and running.
+
+The first thing to do to set up Hubot is to get the Yeoman generator and then call the Yeoman generator to set up a dummy project. The commands involved are listed below.
+
+```shell
+npm install --global yo generator-hubot
+mkdir myhubot
+cd myhubot
+yo hubot --name="Test Hubot"
+```
 
 ## Slack
 
