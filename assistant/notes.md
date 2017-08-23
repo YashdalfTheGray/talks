@@ -71,8 +71,14 @@ The first thing to do to set up Hubot is to get the Yeoman generator and then ca
 npm install --global yo generator-hubot
 mkdir myhubot
 cd myhubot
-yo hubot --name="Test Hubot"
+yo hubot
 ```
+
+This will set up an empty Hubot project in the `myhubot` directory. At this point, it's recommended that you initialize a git repository in the folder and make your first commit. This way, you can add version control to your app, roll back changes if things stop working and also put this code up on Github to share.
+
+To get to the Hubot terminal prompt, just run `bin/hubot` from the `myhubot` folder and you'll be able to test out any commands that you created. Before running Hubot, know that Hubot uses Redis to store any data and will require Redis before you can get started with it. Redis is a lightweight key-value store and it can be installed via Homebrew by running `brew install redis`. You can then start the Redis server by running `redis-server` from a different Terminal tab.
+
+You can also use the `--name` switch to give it a custom name and the `--adapter` switch to make HUbot reply to your favorite chat program. More on adapters later but let's write our first script!
 
 ## Slack
 
