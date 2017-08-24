@@ -78,7 +78,19 @@ This will set up an empty Hubot project in the `myhubot` directory. At this poin
 
 To get to the Hubot terminal prompt, just run `bin/hubot` from the `myhubot` folder and you'll be able to test out any commands that you created. Before running Hubot, know that Hubot uses Redis to store any data and will require Redis before you can get started with it. Redis is a lightweight key-value store and it can be installed via Homebrew by running `brew install redis`. You can then start the Redis server by running `redis-server` from a different Terminal tab.
 
-You can also use the `--name` switch to give it a custom name and the `--adapter` switch to make HUbot reply to your favorite chat program. More on adapters later but let's write our first script!
+You can also use the `--name` switch to give it a custom name and the `--adapter` switch to make HUbot reply to your favorite chat program. More on adapters later but let's write our first script! Once you set up Hubot, there will be a `scripts` folder that you can put all the custom scripts in. Let's write one that responds with a greeting.
+
+```javascript
+// a custom script is just a function that gets the Hubot instance
+// passed in as an argument that we can put custom responses on
+module.exports = robot => {
+    // .respond() takes a regular expression as the message to respond to and
+    // a function that gets a res object that you can use to send responses
+    robot.respond(/(hi|hello|hey)/i, res => res.send('Hello, how are you?'));
+}
+```
+
+There it is, our first custom Hubot response. Anything in the scripts folder will automatically be read in as a custom script and if there is a collection of responses that you find online like `hubot-darksky` for weather, you can include it in the array in the file called `external-scripts.json`.
 
 ## Slack
 
