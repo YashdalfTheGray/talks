@@ -14,7 +14,7 @@ Let's get into the details of making this thing work. We'll get started with mak
 
 ## Components involved
 
-As mentioned above, we'll connect smart devices in our house to GitHub's Hubot project and then use slack to ask Hubot questions which will get us access to the data in a more conversational way than just a dashboard on the web or a readout display. Over the next few sections, we'll look at these pieces in detail and put it all together to ulitmately achieve conversational user experience like Jarvis.
+As mentioned above, we'll connect smart devices in our house to GitHub's Hubot project and then use slack to ask Hubot questions which will get us access to the data in a more conversational way than just a dashboard on the web or a readout display. Over the next few sections, we'll look at these pieces in detail and put it all together to ultimately achieve conversational user experience like Jarvis.
 
 ## IoT
 
@@ -101,3 +101,10 @@ HUBOT_SLACK_TOKEN=xoxb-YOUR-TOKEN-HERE ./bin/hubot --adapter slack
 ```
 
 Done and done. Now we have an IoT device connected to Hubot which is then connected to Slack. Your personal assistant is ready to go!
+
+## Resources
+
+* [Particle Photon Docs](https://docs.particle.io/reference/firmware/photon/)
+* [Hubot Getting Started](https://hubot.github.com/docs/)
+* [Slack App Directory - Hubot](https://slack.com/apps/A0F7XDU93-hubot)
+* [Slack for Hubot](https://slackapi.github.io/hubot-slack/)
