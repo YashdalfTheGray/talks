@@ -10,7 +10,9 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Using Slack, Hubot and IoT to create a virtual house assistant
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/assistant/README.md)
+* [Abstract](https://yashdalfthegray.github.io/talks/assistant/abstract)
+* [Presentation](https://yashdalfthegray.github.io/talks/assistant)
+* [Presentation Notes](https://yashdalfthegray.github.io/talks/assistant/notes)
 
 ## Creating a smart HVAC system with Particle Photons
 
