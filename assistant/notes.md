@@ -94,10 +94,10 @@ There it is, our first custom Hubot response. Anything in the scripts folder wil
 
 ## Slack
 
-Setting up a slack team, adding your bot, giving it a cool name, constructing help
+Now that we have our Hubot set up, let's connect it to Slack. The first thing we need is a Slack team or a community. You can either create a new one or add Hubot to any Slack team that you have admin rights to. You can find Hubot in Slack's App Directory under bots or by going [here](https://slack.com/apps/A0F7XDU93-hubot). Once there, log into a Slack team and add Hubot to your team. It'll ask for a name, a username and a picture and also provide you with an access token that we're going to use to get Hubot connected to Slack. Once you've got the bot registered, running Hubot with Slack is just a command away.
 
-## Pull it all together
+```shell
+HUBOT_SLACK_TOKEN=xoxb-YOUR-TOKEN-HERE ./bin/hubot --adapter slack
+```
 
-Any glue/duct tape that needs mentioning here
-
-## That's all folks
+Done and done. Now we have an IoT device connected to Hubot which is then connected to Slack. Your personal assistant is ready to go!
