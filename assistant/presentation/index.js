@@ -5,6 +5,7 @@ import createTheme from 'spectacle/lib/themes/default';
 import {
     Deck,
     Heading,
+    Image,
     Link,
     Slide,
     Text
@@ -13,7 +14,11 @@ import {
 require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
-const images = {};
+const images = {
+    hubot: require('../assets/hubot.svg'),
+    particle: require('../assets/particle.svg'),
+    slack: require('../assets/slack.svg')
+};
 
 preloader(images);
 
@@ -41,6 +46,18 @@ export default class Presentation extends React.Component {
                     <Text margin="30px" textColor="tertiary" textSize={48}>
                         Yash Kulshrestha
                     </Text>
+                </Slide>
+                <Slide>
+                    <Text margin="36px" textColor="secondary" textSize={48}>
+                        Hey, Jarvis...
+                    </Text>
+                </Slide>
+                <Slide>
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Image src={images.particle} width="25%" style={{ transform: 'rotate(90deg)' }} />
+                        <Image src={images.hubot} width="25%" />
+                        <Image src={images.slack} width="25%" />
+                    </div>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
