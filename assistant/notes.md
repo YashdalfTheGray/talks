@@ -108,6 +108,7 @@ Done and done. Now we have an IoT device connected to Hubot which is then connec
 * [Particle Photon Docs](https://docs.particle.io/reference/firmware/photon/)
 * [DHT11 Temperature and Humidity Sensor](https://www.adafruit.com/product/386)
 * [Photocell](https://www.adafruit.com/product/161)
+* [Weather Station PCB](https://oshpark.com/shared_projects/YXAh1m9F)
 * [Hubot Getting Started](https://hubot.github.com/docs/)
 * [Slack App Directory - Hubot](https://slack.com/apps/A0F7XDU93-hubot)
 * [Slack for Hubot](https://slackapi.github.io/hubot-slack/)
