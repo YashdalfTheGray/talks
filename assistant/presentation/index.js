@@ -17,7 +17,10 @@ require('spectacle/lib/themes/default/index.css');
 const images = {
     hubot: require('../assets/hubot.svg'),
     particle: require('../assets/particle.svg'),
-    slack: require('../assets/slack.svg')
+    slack: require('../assets/slack.svg'),
+    humidity: require('../assets/humidity.svg'),
+    temperature: require('../assets/temperature.svg'),
+    brightness: require('../assets/brightness.svg')
 };
 
 preloader(images);
@@ -34,6 +37,11 @@ const theme = createTheme(
         secondary: 'Helvetica'
     }
 );
+
+const sensorSlideNotes = [
+    'Temperature icon created by Adrien Coquet from the Noun Project.',
+    'Humidity icon created by Arthur Shlain from the Noun Project.'
+].join('\n');
 
 export default class Presentation extends React.Component {
     render() {
@@ -57,6 +65,16 @@ export default class Presentation extends React.Component {
                         <Image src={images.particle} width="25%" style={{ transform: 'rotate(90deg)' }} />
                         <Image src={images.hubot} width="25%" />
                         <Image src={images.slack} width="25%" />
+                    </div>
+                </Slide>
+                <Slide>
+                    <Image src={images.particle} width="35%" />
+                </Slide>
+                <Slide notes={sensorSlideNotes}>
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Image src={images.temperature} />
+                        <Image src={images.humidity} />
+                        <Image src={images.brightness} width="20%"/>
                     </div>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
