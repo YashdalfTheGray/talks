@@ -40,7 +40,8 @@ const theme = createTheme(
 
 const sensorSlideNotes = [
     'Temperature icon created by Adrien Coquet from the Noun Project.',
-    'Humidity icon created by Arthur Shlain from the Noun Project.'
+    'Humidity icon created by Arthur Shlain from the Noun Project.',
+    'Brightness icon created by Storm Icons from the Noun Project.'
 ].join('\n');
 
 export default class Presentation extends React.Component {
