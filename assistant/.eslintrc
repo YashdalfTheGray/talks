@@ -9,6 +9,7 @@
   "quotes": [2, "single"]
   "react/prefer-es6-class": 0
   "react/no-multi-comp": 0
+  "react/jsx-closing-bracket-location": 0
 
 "env":
   "browser": true,

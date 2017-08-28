@@ -3,6 +3,7 @@ import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 
 import {
+    Code,
     Deck,
     Heading,
     Image,
@@ -96,8 +97,8 @@ export default class Presentation extends React.Component {
                     </Link>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
-                    <Heading size={3} caps lineHeight={1} textColor="secondary">
-                        Thanks for listening!
+                    <Heading size={3} lineHeight={1} textColor="secondary">
+                        Thanks!
                     </Heading>
                 </Slide>
             </Deck>
