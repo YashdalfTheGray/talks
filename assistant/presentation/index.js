@@ -3,7 +3,6 @@ import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 
 import {
-    Code,
     Deck,
     Heading,
     Image,
@@ -78,6 +77,16 @@ export default class Presentation extends React.Component {
                         <Image src={images.humidity} />
                         <Image src={images.brightness} width="20%"/>
                     </div>
+                </Slide>
+                <Slide>
+                    <pre style={{ fontSize: '24px', textAlign: 'left' }}>
+                        {require('raw-loader!../assets/particle-structure.ino')}
+                    </pre>
+                </Slide>
+                <Slide>
+                    <pre style={{ fontSize: '24px', textAlign: 'left' }}>
+                        {require('raw-loader!../assets/particle-code.ino')}
+                    </pre>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
