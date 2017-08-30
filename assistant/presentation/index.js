@@ -10,6 +10,7 @@ import {
     Slide,
     Text
 } from 'spectacle';
+import CodeSlide from 'spectacle-code-slide';
 
 require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
@@ -78,16 +79,17 @@ export default class Presentation extends React.Component {
                         <Image src={images.brightness} width="20%"/>
                     </div>
                 </Slide>
-                <Slide>
-                    <pre style={{ fontSize: '24px', textAlign: 'left' }}>
-                        {require('raw-loader!../assets/particle-structure.ino')}
-                    </pre>
-                </Slide>
-                <Slide>
-                    <pre style={{ fontSize: '24px', textAlign: 'left' }}>
-                        {require('raw-loader!../assets/particle-code.ino')}
-                    </pre>
-                </Slide>
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="clike"
+                    code={require('raw-loader!../assets/particle-code.ino')}
+                    ranges={[
+                        { loc: [0, 2] },
+                        { loc: [3, 8] },
+                        { loc: [9, 17] },
+                        { loc: [18, 24] }
+                    ]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
