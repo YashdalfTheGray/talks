@@ -90,6 +90,15 @@ export default class Presentation extends React.Component {
                         { loc: [9, 17] },
                         { loc: [18, 24] }
                     ]} />
+                <Slide>
+                    <Image src={images.hubot} width="35%" />
+                </Slide>
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="clike"
+                    code={require('raw-loader!../assets/hubot-setup.sh')}
+                    ranges={[{ loc: [0, 4] }]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
