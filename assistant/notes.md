@@ -1,4 +1,4 @@
-# Managing Your Learning
+# Using Slack, Hubot and IoT to create a virtual house assistant
 
 ## Introduction and Contact
 
