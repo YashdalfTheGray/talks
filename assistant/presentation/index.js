@@ -99,12 +99,12 @@ export default class Presentation extends React.Component {
                     lang="clike"
                     code={require('raw-loader!../assets/hubot-setup.sh')}
                     ranges={[{ loc: [0, 4] }]} />
-                    <CodeSlide
-                        bgColor="#fff"
-                        color="#555"
-                        lang="js"
-                        code={require('raw-loader!../assets/simple-hubot.txt')}
-                        ranges={[{ loc: [0, 6] }]} />
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/simple-hubot.txt')}
+                    ranges={[{ loc: [0, 6] }]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
