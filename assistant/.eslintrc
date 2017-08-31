@@ -3,6 +3,7 @@
   - "formidable/configurations/es6-react"
 
 "rules":
+  "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }]
   "indent": [2, 4, {"SwitchCase": 1}]
   "max-len": 0
   "no-magic-numbers": 0
