@@ -23,7 +23,8 @@ const images = {
     slack: require('../assets/slack.svg'),
     humidity: require('../assets/humidity.svg'),
     temperature: require('../assets/temperature.svg'),
-    brightness: require('../assets/brightness.svg')
+    brightness: require('../assets/brightness.svg'),
+    done: require('../assets/thats-all-folks.svg')
 };
 
 preloader(images);
@@ -120,6 +121,13 @@ export default class Presentation extends React.Component {
                         <ListItem style={{ margin: '32px' }}>Bot User</ListItem>
                     </List>
                 </Slide>
+                <Slide>
+                    <pre>
+                        <div><span style={{ color: '#00c853' }}>$</span> HUBOT_SLACK_TOKEN=xoxb-YOUR-TOKEN-HERE \</div>
+                        <div style={{ textAlign: 'left', marginLeft: '58px' }}>bin/hubot --adapter slack</div>
+                    </pre>
+                </Slide>
+                <Slide bgImage={images.done} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
