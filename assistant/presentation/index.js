@@ -7,6 +7,8 @@ import {
     Heading,
     Image,
     Link,
+    List,
+    ListItem,
     Slide,
     Text
 } from 'spectacle';
@@ -110,6 +112,13 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <Slide>
                     <Image src={images.slack} width="35%" />
+                </Slide>
+                <Slide>
+                    <List style={{ margin: '96px' }}>
+                        <ListItem style={{ margin: '32px' }}>Team</ListItem>
+                        <ListItem style={{ margin: '32px' }}>Integration</ListItem>
+                        <ListItem style={{ margin: '32px' }}>Bot User</ListItem>
+                    </List>
                 </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
