@@ -105,9 +105,12 @@ export default class Presentation extends React.Component {
                     lang="js"
                     code={require('raw-loader!../assets/simple-hubot.txt')}
                     ranges={[{ loc: [0, 6] }]} />
-                    <Slide>
-                        <pre><span style={{ color: '#00c853' }}>$</span> bin/hubot</pre>
-                    </Slide>
+                <Slide>
+                    <pre><span style={{ color: '#00c853' }}>$</span> bin/hubot</pre>
+                </Slide>
+                <Slide>
+                    <Image src={images.slack} width="35%" />
+                </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
