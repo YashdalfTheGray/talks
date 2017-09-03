@@ -118,7 +118,8 @@ export default class Presentation extends React.Component {
                     <List style={{ margin: '96px' }}>
                         <ListItem style={{ margin: '32px' }}>Team</ListItem>
                         <ListItem style={{ margin: '32px' }}>Integration</ListItem>
-                        <ListItem style={{ margin: '32px' }}>Bot User</ListItem>
+                        <ListItem style={{ margin: '32px' }}>Bot user</ListItem>
+                        <ListItem style={{ margin: '32px' }}>Slack access token</ListItem>
                     </List>
                 </Slide>
                 <Slide>
@@ -144,11 +145,6 @@ export default class Presentation extends React.Component {
                     <Link href="https://yashdalfthegray.github.io/talks/assistant/notes" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Presentation Notes
                     </Link>
-                </Slide>
-                <Slide transition={['fade']} bgColor="primary">
-                    <Heading size={3} lineHeight={1} textColor="secondary">
-                        Thanks!
-                    </Heading>
                 </Slide>
             </Deck>
         );
