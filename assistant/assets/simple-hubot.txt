@@ -3,4 +3,12 @@ module.exports = (robot) => {
         /(hi|hello|hey)/i,
         res => res.send('Hello, how are you?')
     );
+    robot.respond(
+        /how (cold|hot) is (it|my house)/i,
+        async res => {
+            const r = await fetch(apiUrl);
+            const v = await r.json();
+            res.send(`It is ${v.result}°F.`);
+        }
+    )
 };

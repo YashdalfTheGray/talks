@@ -93,6 +93,12 @@ export default class Presentation extends React.Component {
                         { loc: [9, 17] },
                         { loc: [18, 24] }
                     ]} />
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="clike"
+                    code={require('raw-loader!../assets/particle-api.sh')}
+                    ranges={[{ loc: [0, 3] }, { loc: [4, 8] }]} />
                 <Slide>
                     <Image src={images.hubot} width="35%" />
                 </Slide>
@@ -107,7 +113,7 @@ export default class Presentation extends React.Component {
                     color="#555"
                     lang="js"
                     code={require('raw-loader!../assets/simple-hubot.txt')}
-                    ranges={[{ loc: [0, 6] }]} />
+                    ranges={[{ loc: [0, 1] }, { loc: [1, 5] }, { loc: [5, 13] }]} />
                 <Slide>
                     <pre><span style={{ color: '#00c853' }}>$</span> bin/hubot</pre>
                 </Slide>
