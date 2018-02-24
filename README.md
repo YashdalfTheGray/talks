@@ -22,3 +22,7 @@ Home to various talks, proposed ideas and abstracts.
 
 * [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/abstract)
 * [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/testing/notes)
+
+## Writing Your First Webpack Loader
+
+* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/loader/README.md)
