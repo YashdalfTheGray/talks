@@ -25,4 +25,6 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Writing Your First Webpack Loader
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/loader/README.md)
+* [Abstract](https://yashdalfthegray.github.io/talks/loader/abstract)
+* [Presentation](https://yashdalfthegray.github.io/talks/loader)
+* [Presentation Notes](https://yashdalfthegray.github.io/talks/loader/notes)
