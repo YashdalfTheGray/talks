@@ -24,18 +24,20 @@ module.exports = function(source, map) {
 
 Let's label some parts of this code. The structure of a loader is a module that exports a single function that has the signature `(source: string, map: string) => void`. Additionally, Webpack binds the loader API to the `this` context of the exported function. We can talk to Webpack using `this` and when we're done, we return the processed code using `this.callback`. The signature of `this.callback` is `(err: Error|null, source: string, map: string)`.
 
-Webpack uses `this.callback` instead of a `return` statement because most file processing in Javascript is asynchronous and `this.callback` provided a handy way to talk to Webpack from child context of your loader function. 
+Webpack uses `this.callback` instead of a `return` statement because most file processing in Javascript is asynchronous and `this.callback` provided a handy way to talk to Webpack from child context of your loader function.
 
 And that's it. That's an identity loader done. Assume we called our loader `my-awesome-loader`, we can then use this in our Webpack config.
 
 ```javascript
 module.exports = {
     module: {
-        rules: {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: ['my-awesome-loader']
-        }
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['my-awesome-loader']
+            }
+        ]
     }
 }
 ```
