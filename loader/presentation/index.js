@@ -42,7 +42,18 @@ export default class Presentation extends React.Component {
                     color="#555"
                     lang="js"
                     code={require('raw-loader!../assets/config.txt')}
-                    ranges={[{ loc: [2, 19] }]} />
+                    ranges={[{ loc: [9, 18] }]} />
+                <Slide>
+                    <Text margin="36px" textColor="secondary" textSize={48}>
+                        ✨Loaders✨
+                    </Text>
+                </Slide>
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/identity-loader.txt')}
+                    ranges={[{ loc: [0, 9] }]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
