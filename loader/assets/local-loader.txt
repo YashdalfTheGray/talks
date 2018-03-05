@@ -1,0 +1,16 @@
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['my-awesome-loader']
+            }
+        ]
+    },
+    resolveLoader: {
+        alias: {
+            'my-awesome-loader': './index.js'
+        }
+    }
+}

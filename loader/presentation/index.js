@@ -54,6 +54,12 @@ export default class Presentation extends React.Component {
                     lang="js"
                     code={require('raw-loader!../assets/identity-loader.txt')}
                     ranges={[{ loc: [0, 9] }]} />
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/local-loader.txt')}
+                    ranges={[{ loc: [0, 10] }]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
