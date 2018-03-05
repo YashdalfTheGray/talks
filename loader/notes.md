@@ -38,6 +38,11 @@ module.exports = {
                 use: ['my-awesome-loader']
             }
         ]
+    },
+    resolveLoader: {
+        alias: {
+            'my-awesome-loader': join(__dirname, './index.js')
+        }
     }
 }
 ```
