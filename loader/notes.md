@@ -66,3 +66,47 @@ module.exports = function(source, map) {
 The source file that webpack is working on is passed into the loader using the `source` argument as a string. So we can run a simple replace on the entire string and replace all instances of `console.log()` with empty string so that once minification happens, it'll get removed. Again, simple. This is all thanks to the Webpack team for designing a very simple API and making it very easy to get started with Webpack loaders.
 
 The eagle-eyed amongst you might have noticed that I'm not doing anything to the `map` argument passed in. As you could have guessed, it's the sourcemap associated with the source that we're currently processing. We're making the assumption that this loader is run first in the chain so we don't have to process the sourcemap. It's a little out of the scope for this talk but it's processed in much the same way.
+
+## `loader-utils`
+
+We've already created two loaders and we've only just started. Our other loaders were pretty basic but what if we want to customize the behavior of a loader while we're configuring it with Webpack? This is where the `loader-utils` package comes into play. This package, created by the Webpack developers has a set of utilities to help you write your loader. One such function is called `loaderUtils.getOptions` which returns an object parsed from the options passed into your loader.
+
+For example, consider that we want our `console.log` remover to only clear out lines in production (ignore that you can have different configurations for production and development). We can just use an option for that like below.
+
+```javascript
+const { NODE_ENV } = process.env;
+
+module.exports = {
+    module: {
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: [{
+                loader: 'my-awesome-loader',
+                options: {
+                    env: NODE_ENV
+                }
+            }]
+        }]
+    }
+}
+```
+
+On the loader side, we can use `loaderUtils.getOptions` to access the `env` variable that the user passed into our loader.
+
+```javascript
+const loaderUtils = require('loader-utils');
+
+module.exports = function(source, map) {
+    const { env } = loaderUtils.getOptions(this);
+    let newSource = source;
+
+    if (env === 'production') {
+        newSource = source.replace(/console\.log\(.*\);?\n/g, '');
+    }
+
+    this.callback(null, newSource, map);
+}
+```
+
+Pretty simple still. The `loader-utils` package has a few more helpful methods which can help with writing loaders as well. I encourage you to check out the [docs for loader-utils](https://github.com/webpack/loader-utils). 
