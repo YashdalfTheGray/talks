@@ -3,6 +3,7 @@ import {
     Deck,
     Heading,
     Link,
+    Markdown,
     Slide,
     Text
 } from 'spectacle';
@@ -71,6 +72,11 @@ export default class Presentation extends React.Component {
                     lang="js"
                     code={require('raw-loader!../assets/remove-console.txt')}
                     ranges={[{ loc: [0, 9] }]} />
+                <Slide>
+                    <Markdown margin="36px" textColor="secondary" textSize={48}>
+                        `loader-utils`
+                    </Markdown>
+                </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
