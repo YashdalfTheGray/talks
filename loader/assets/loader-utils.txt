@@ -1,0 +1,14 @@
+const { getOptions } = require('loader-utils');
+
+module.exports = function(source, map) {
+    const { env } = getOptions(this);
+    let newSource = source;
+
+    if (env === 'production') {
+        newSource = source.replace(
+            /console\.log\(.*\);?\n/g, ''
+        );
+    }
+
+    this.callback(null, newSource, map);
+}

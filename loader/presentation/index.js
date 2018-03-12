@@ -60,7 +60,7 @@ export default class Presentation extends React.Component {
                     color="#555"
                     lang="js"
                     code={require('raw-loader!../assets/local-loader.txt')}
-                    ranges={[{ loc: [0, 10] }]} />
+                    ranges={[{ loc: [0, 11] }]} />
                 <Slide>
                     <Text margin="36px" textColor="secondary" textSize={48}>
                         Let's get fancy!
@@ -77,6 +77,17 @@ export default class Presentation extends React.Component {
                         `loader-utils`
                     </Markdown>
                 </Slide>
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/loader-utils.txt')}
+                    ranges={[
+                        { loc: [0, 1] },
+                        { loc: [3, 4] },
+                        { loc: [6, 11] },
+                        { loc: [12, 13] }
+                    ]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
