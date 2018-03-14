@@ -110,3 +110,39 @@ module.exports = function(source, map) {
 ```
 
 Pretty simple still. The `loader-utils` package has a few more helpful methods which can help with writing loaders as well. I encourage you to check out the [docs for loader-utils](https://github.com/webpack/loader-utils). 
+
+## Options
+
+We've seen how to get options from the config using `loader-utils` but we haven't seen too much of what we can do with the options that Webpack enables us to pass into the loader. Starting with Webpack version 2, you can pass an object to the loader using the `options` key like in the example above. This lets you customize the behavior of the loader or provide data to it that it can't otherwise determine. 
+
+And since it's an object, you can pass anything that can be the value of a key in an object including functions, arrays, strings and even other objects. On the loader side, we can fetch the options given to the loader using `getOptions` from `loader-utils` like shown above. This will return the same object that was passed as the value of the `options` key in the Webpack configuration object.
+
+What if you're using Webpack version 1 though? Webpack version 1 used a query string approach to passing options. You would put a `?` after the loader name and chain key value pairs with `&` just like in HTTP query strings. This meant that you could not pass objects, functions or arrays. Really, anything more complex than strings, booleans and numbers wouldn't work. Still, using options to customize the behavior of a loader is still pretty powerful and is one of Webpack's superpowers.
+
+
+## Backwards compatibility
+
+Starting Webpack version 2, the code dev team changed how options are passed to the loader but what if you wanted to pass a function to a loader but you were using Webpack v1? To preserve backwards compatibility, the Webpack team versioned the loader API. Webpack v1 uses Loader API v1 and Webpack v2 and newer uses Loader API v2. This way, you can detect what version of the loader API is available to your loader.
+
+We can use this to pass a function into a loader using Webpack v1! Loader API v1 includes a way to fetch the entire Webpack configuration object which was deprecated as an option in Loader API v2. If we can check for the Loader API version (which we can), we can read functions directly out of the Webpack configuration object! A simple exmaple is provided below.
+
+```javascript
+module.exports = {
+    myLoader: {
+        myFunction: function() {
+            // some code here
+        }
+    }
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'my-loader?enableCompat=true'
+            }
+        ]
+    }
+}
+```
+
+This combined with the Loader API v1 means that you can pass functions into any version of the loader. As a forewarning, Loader API v2 and newer have deprecated the property that is used to get the entire Webpack configuration object and it will soon be removed so it's a good idea to check for Loader API v1 before attempting this. Luckily, passing functions (or complex data) to loaders is much simpler in Webpack v2 or newer!
