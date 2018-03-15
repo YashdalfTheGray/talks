@@ -1,0 +1,14 @@
+{
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: [{
+        loader: 'my-awesome-loader',
+        options: { foo: true }
+    }]
+}
+
+{
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'my-awesome-loader?foo=true'
+}

@@ -88,6 +88,15 @@ export default class Presentation extends React.Component {
                         { loc: [6, 11] },
                         { loc: [12, 13] }
                     ]} />
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/loader-options.txt')}
+                    ranges={[
+                        { loc: [0, 8] },
+                        { loc: [9, 14] }
+                    ]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
