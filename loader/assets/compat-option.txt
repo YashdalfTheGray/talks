@@ -1,0 +1,14 @@
+module.exports = {
+    myLoader: {
+        myFunction: function() {
+            // some code here
+        }
+    }
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'my-loader?enableCompat=true'
+        }]
+    }
+}

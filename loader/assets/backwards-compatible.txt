@@ -1,0 +1,25 @@
+const {
+    enableCompat,
+    myFunction
+} = getOptions(this);
+
+let resultFunction;
+
+if (enableCompat) {
+    if (this.version > 1) {
+        // new API version
+        return;
+    }
+
+    myCompatFunction = this.options.myLoader.myFunction;
+
+    if (!myCompatFunction) {
+        // missing option 
+        return;
+    }
+
+    resultFunction = myCompactFunction;
+}
+else {
+    resultFunction = myFunction;
+}

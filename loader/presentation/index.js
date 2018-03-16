@@ -97,6 +97,28 @@ export default class Presentation extends React.Component {
                         { loc: [0, 8] },
                         { loc: [9, 14] }
                     ]} />
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/compat-option.txt')}
+                    ranges={[
+                        { loc: [1, 6] },
+                        { loc: [6, 13] }
+                    ]} />
+                <CodeSlide
+                    bgColor="#fff"
+                    color="#555"
+                    lang="js"
+                    code={require('raw-loader!../assets/backwards-compatible.txt')}
+                    ranges={[
+                        { loc: [0, 4] },
+                        { loc: [5, 6] },
+                        { loc: [7, 8] },
+                        { loc: [8, 12] },
+                        { loc: [13, 19] },
+                        { loc: [20, 25] }
+                    ]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
                         Github
