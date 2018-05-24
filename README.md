@@ -26,10 +26,14 @@ Home to various talks, proposed ideas and abstracts.
 * [Presentation](https://yashdalfthegray.github.io/talks/react)
 * [Presentation Notes](https://yashdalfthegray.github.io/talks/react/notes)
 
+## Around Typescript in (less than) 60 minutes
+
+* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/typescript/README.md)
+* [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/typescript/notes.md)
+
 ## Test all the Javascript
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/abstract)
-* [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/testing/notes)
+* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/README.md)
 
 ## Creating a smart HVAC system with Particle Photons
 
