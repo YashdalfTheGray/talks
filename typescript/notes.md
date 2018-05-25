@@ -67,7 +67,7 @@ function validatePortMappings(portMaps: PortMapping[]): boolean {
 
 What if part of the interface is optional like `hostPort` in the `PortMapping` interface? We can just add a `?` after the name of the property to tell Typescript that this property is optional and can be excluded. 
 
-## Generic types
+## Generic Types
 
 Consider the listener function from above. Right now, the data is of type `any` which is a catch-all type in Typescript. It is generally better for the consumer of your code and for documentation to be more specific than `any`. This is where Generic types are useful.
 
@@ -103,7 +103,7 @@ const enum NetworkModes {
 }
 ```
 
-## More fun with types
+## Even More Fun With Types
 
 After all, this is Typescript! We'll get into some advanced types and talk about Union and Intersection types. We'll also use this to talk about the `strictNullChecks` flag that you can pass into the Typescript compiler which will prevent `null` or `undefined` from being assigned to anything that has a specific type. 
 
@@ -125,7 +125,7 @@ function hello(name: StringOrNull): void {
 }
 ```
 
-## Importing modules and typing files
+## Importing Modules and Typings Files
 
 All of these typings are great but it would be an immense pain if we were using a library in our code and we had to write the typings ourselves. Luckily most libraries either have typings that they export like `aws-sdk` or types that are maintained under the `@types` namespace on NPM like `@types/lodash`. 
 
