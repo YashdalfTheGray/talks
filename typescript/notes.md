@@ -124,3 +124,18 @@ function hello(name: StringOrNull): void {
     }
 }
 ```
+
+## Importing modules and typing files
+
+All of these typings are great but it would be an immense pain if we were using a library in our code and we had to write the typings ourselves. Luckily most libraries either have typings that they export like `aws-sdk` or types that are maintained under the `@types` namespace on NPM like `@types/lodash`. 
+
+All we need to do is install the typings and we can start taking advantage of the types. What's better, most Typescript IDE/Text Editor integrations will read the types even if you're not working in Typescript! Free types in Javascript!
+
+```shell
+npm install aws-sdk lodash @types/lodash
+```
+
+```typescript
+import * as ECS from 'aws-sdk/clients/ecs';
+import { find } from 'lodash';
+```
