@@ -6,6 +6,7 @@ import {
     Deck,
     Heading,
     Image,
+    Link,
     Slide,
     Text
 } from 'spectacle';
@@ -17,7 +18,7 @@ require('normalize.css');
 
 const theme = createTheme(
     {
-        primary: '#FFF',
+        primary: '#2d2d2d',
         secondary: '#007acc',
         tertiary: '#007acc',
         quarternary: '#007acc'
@@ -55,11 +56,31 @@ export default class Presentation extends React.Component {
                     </Text>
                 </Slide>
                 <CodeSlide
-                    bgColor="#fff"
-                    color="#007acc"
-                    lang="js"
+                    lang="ts"
                     code={require('raw-loader!../assets/workbook.txt')}
-                    ranges={[{ loc: [9, 18] }]} />
+                    ranges={[
+                        { loc: [0, 3], title: 'Intro' },
+                        { loc: [4, 11], title: 'Adding Types' },
+                        { loc: [12, 19], title: 'Function Types' },
+                        { loc: [20, 30], title: 'Better Function Types' }
+                    ]} />
+                <Slide transition={['fade']} bgColor="primary">
+                    <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                        Github
+                    </Link>
+                    <Link href="https://twitter.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                        Twitter
+                    </Link>
+                    <Link href="https://yashkulshrestha.carrd.co" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                        Website
+                    </Link>
+                    <Text textColor="secondary" textSize={48} margin="24px ">
+                        ~~
+                    </Text>
+                    <Link href="https://yashdalfthegray.github.io/talks/typescript/notes" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                        Presentation Notes
+                    </Link>
+                </Slide>
             </Deck>
         );
     }
