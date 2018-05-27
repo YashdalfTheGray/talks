@@ -28,8 +28,9 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Around Typescript in (less than) 60 minutes
 
-* [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/typescript/README.md)
-* [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/typescript/notes.md)
+* [Abstract](https://yashdalfthegray.github.io/talks/typescript/abstract)
+* [Presentation](https://yashdalfthegray.github.io/talks/typescript)
+* [Presentation Notes](https://yashdalfthegray.github.io/talks/typescript/notes)
 
 ## Test all the Javascript
 

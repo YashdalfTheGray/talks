@@ -1,4 +1,0 @@
-var helloWorldTag = React.createElement('h1', null, 'Hello World!');
-var app = React.createElement('app', null, helloWorldTag);
-
-ReactDOM.render(app, document.getElementById('react-root'));

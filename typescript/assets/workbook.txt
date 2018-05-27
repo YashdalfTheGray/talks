@@ -1,0 +1,3 @@
+const a = [1, 2, 3, 4, 5];
+
+console.log(a.map(v => v * 2).reduce((acc, a) => acc + a, 0));
