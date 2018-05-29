@@ -18,6 +18,7 @@ function addListener(
         events.removeListener(event, l);
 }
 
+
 type Listener = (data: any) => void;
 type DeregisterFunction = () => void;
 
@@ -28,3 +29,32 @@ function addListener(
     return () => 
         events.removeListener(event, l);
 }
+
+
+interface PortMapping {
+    hostPort?: number;
+    containerPort: number;
+    protocol: string;
+}
+
+function validatePortMappings(
+    portMaps: PortMapping[]
+): boolean { }
+
+type Listener<T> = (data: T) => void;
+
+function addListener(
+    event: string,
+    l: Listener<string>
+): DeregisterFunction {
+    events.addEventListener(event, l);
+    return () => 
+        events.removeListener(event, l);
+}
+
+const enum Directions {
+    Up = "UP",
+    Down = "DOWN",
+    Left = "LEFT",
+    Right = "RIGHT"
+};
