@@ -62,10 +62,11 @@ export default class Presentation extends React.Component {
                         { loc: [0, 3], title: 'Intro' },
                         { loc: [4, 11], title: 'Adding Types' },
                         { loc: [12, 19], title: 'Function Types' },
-                        { loc: [20, 31], title: 'Better Function Types' },
-                        { loc: [32, 42], title: 'Interfaces' },
-                        { loc: [43, 53], title: 'Generics' },
-                        { loc: [54, 60], title: 'Enums' }
+                        { loc: [20, 32], title: 'Better Function Types' },
+                        { loc: [33, 43], title: 'Interfaces' },
+                        { loc: [44, 56], title: 'Generics' },
+                        { loc: [57, 63], title: 'Enums' },
+                        { loc: [64, 74], title: 'Intersections and Unions' }
                     ]} />
                 <Slide transition={['fade']} bgColor="primary">
                     <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">

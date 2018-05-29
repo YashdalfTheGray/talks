@@ -19,6 +19,7 @@ function addListener(
 }
 
 
+
 type Listener = (data: any) => void;
 type DeregisterFunction = () => void;
 
@@ -41,6 +42,8 @@ function validatePortMappings(
     portMaps: PortMapping[]
 ): boolean { }
 
+
+
 type Listener<T> = (data: T) => void;
 
 function addListener(
@@ -58,3 +61,14 @@ const enum Directions {
     Left = "LEFT",
     Right = "RIGHT"
 };
+
+type ExtendFunction<T, U> = 
+    (first: T, second: U) => T & U;
+
+type StringOrNull = string | null;
+
+function hello(name: StringOrNull): void {
+    if ((<string>name).length > 0) {
+        console.log(`Hello ${name}`);
+    }
+}
