@@ -107,6 +107,8 @@ const enum NetworkModes {
 
 After all, this is Typescript! We'll get into some advanced types and talk about Union and Intersection types. We'll also use this to talk about the `strictNullChecks` flag that you can pass into the Typescript compiler which will prevent `null` or `undefined` from being assigned to anything that has a specific type. 
 
+`strictNullChecks` is a Typescript compiler flag that will prevent types from being assigned `undefined` or `null`. This can be helpful when you want your code to not accept those two values as valid and you will have to use a union type, like the one below, to tell the compiler where `undefined` and `null` are acceptable values. 
+
 ```typescript
 type ExtendFunction<T, U> = (first: T, second: U) => T & U;
 
@@ -139,3 +141,7 @@ npm install aws-sdk lodash @types/lodash
 import * as ECS from 'aws-sdk/clients/ecs';
 import { find } from 'lodash';
 ```
+
+## Conclusion
+
+This was just a tour of the basics of Typescript, there is a lot of depth to this language and it is well documented in the [Typescript Handbook and documentation](https://www.typescriptlang.org/docs/home.html) created by Microsoft!

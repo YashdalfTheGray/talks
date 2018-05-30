@@ -66,23 +66,53 @@ export default class Presentation extends React.Component {
                         { loc: [33, 43], title: 'Interfaces' },
                         { loc: [44, 56], title: 'Generics' },
                         { loc: [57, 63], title: 'Enums' },
-                        { loc: [64, 74], title: 'Intersections and Unions' }
+                        { loc: [64, 76], title: 'Intersections and Unions' },
+                        { loc: [77, 81], title: 'Modules' }
                     ]} />
                 <Slide transition={['fade']} bgColor="primary">
-                    <Link href="https://github.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                    <Link
+                        href="https://github.com/yashdalfthegray"
+                        target="_blank"
+                        textColor="tertiary"
+                        textSize={48}
+                        margin="24px">
                         Github
                     </Link>
-                    <Link href="https://twitter.com/yashdalfthegray" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                    <Link
+                        href="https://twitter.com/yashdalfthegray"
+                        target="_blank"
+                        textColor="tertiary"
+                        textSize={48}
+                        margin="24px">
                         Twitter
                     </Link>
-                    <Link href="https://yashkulshrestha.carrd.co" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                    <Link
+                        href="https://yashkulshrestha.carrd.co"
+                        target="_blank"
+                        textColor="tertiary"
+                        textSize={48}
+                        margin="24px">
                         Website
                     </Link>
                     <Text textColor="secondary" textSize={48} margin="24px ">
                         ~~
                     </Text>
-                    <Link href="https://yashdalfthegray.github.io/talks/typescript/notes" target="_blank" textColor="tertiary" textSize={48} margin="24px">
+                    <Link
+                        href="https://yashdalfthegray.github.io/talks/typescript/notes"
+                        target="_blank"
+                        textColor="tertiary"
+                        textSize={48}
+                        margin="24px">
                         Presentation Notes
+                    </Link>
+                    <p />
+                    <Link
+                        href="https://www.typescriptlang.org/docs/home.html"
+                        target="_blank"
+                        textColor="tertiary"
+                        textSize={48}
+                        margin="24px">
+                        Typescript Docs
                     </Link>
                 </Slide>
             </Deck>

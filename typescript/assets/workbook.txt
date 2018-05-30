@@ -62,6 +62,8 @@ const enum Directions {
     Right = "RIGHT"
 };
 
+
+
 type ExtendFunction<T, U> = 
     (first: T, second: U) => T & U;
 
@@ -72,3 +74,8 @@ function hello(name: StringOrNull): void {
         console.log(`Hello ${name}`);
     }
 }
+
+// npm install aws-sdk lodash @types/lodash
+
+import * as ECS from 'aws-sdk/clients/ecs';
+import { find } from 'lodash';
