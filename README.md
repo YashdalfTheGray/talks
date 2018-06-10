@@ -32,6 +32,12 @@ Home to various talks, proposed ideas and abstracts.
 * [Presentation](https://yashdalfthegray.github.io/talks/typescript)
 * [Presentation Notes](https://yashdalfthegray.github.io/talks/typescript/notes)
 
+## Contributing to Open Source Software
+
+* [Abstract](https://yashdalfthegray.github.io/talks/oss/abstract)
+* [Presentation](https://yashdalfthegray.github.io/talks/oss)
+* [Presentation Notes](https://yashdalfthegray.github.io/talks/oss/notes)
+
 ## Test all the Javascript
 
 * [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/README.md)
