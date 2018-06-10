@@ -60,3 +60,5 @@ All of this writing code to solve problems gave me a very pragmatic approach to 
 * An app that I can allow guests to control the lights in the house using their phones
 
 In general, I like to tinker, I like to break things so I can understand how they work and I keep writing these small apps and scripts that I use on a daily basis. All of this has taught me about so much in software development that I could take the rest of the time and the rest of the day to tell you and it wouldn't be enough. There is a lot out there to learn but creating and contributing to OSS has, in essence, sped up 10x my learning and I'm glad I started down this path!
+
+Matter of fact, the code that runs this presentation is open source, the libraries that it is built on are open source, it's all hosted on Github!
