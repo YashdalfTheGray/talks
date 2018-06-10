@@ -48,6 +48,100 @@ export default class Presentation extends React.Component {
                         @yashdalfthegray
                     </Text>
                 </Slide>
+                <Slide>
+                    <Heading textSize="96px" textColor="secondary">
+                        🤔
+                    </Heading>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Commencing time travel...
+                    </Heading>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Early 1970s
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        ✨Open✨
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Early 1980s
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        Proprietary software
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        1984
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        GNU Project
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Early 1990s
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        GNU/Linux
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        1997
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        The Cathedral and The Bazaar
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        1998
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        Open Source Initiative
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        2005
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        Git
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Now
+                    </Heading>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        Open by default
+                    </Text>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Getting involved
+                    </Heading>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Write some code for it
+                    </Heading>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Writing code every day for 1046 days
+                    </Heading>
+                </Slide>
+                <Slide>
+                    <Heading textSize="48px" textColor="secondary">
+                        Questions?
+                    </Heading>
+                </Slide>
                 <Slide transition={['fade']} bgColor="primary">
                     <Link
                         href="https://github.com/yashdalfthegray"
