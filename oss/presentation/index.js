@@ -123,14 +123,14 @@ export default class Presentation extends React.Component {
                     </Text>
                 </Slide>
                 <Slide>
-                    <Heading textSize="48px" textColor="secondary">
-                        Getting involved
-                    </Heading>
                     <Text textColor="secondary" margin="24px" textSize="36px">
                         Hacktoberfest
                     </Text>
                     <Text textColor="secondary" margin="24px" textSize="36px">
-                        GitHub labels: newcommer, good first issue
+                        GitHub labels
+                    </Text>
+                    <Text textColor="secondary" margin="24px" textSize="36px">
+                        Docs and tests
                     </Text>
                 </Slide>
                 <Slide>
