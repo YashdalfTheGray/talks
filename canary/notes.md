@@ -64,6 +64,12 @@ _to infinity and beyond_
 
 _the burger stack_
 
+Powerfpuff girls - the tech stack is sugar, spice and everything nice.
+
+That's the usual mix, Javascript, Puppeteer, Jest.
+
+But our chemical X, is Docker. Docker elevates our stack to the next level. We can run our tests ANYWHERE.
+
 ## Meeting notes
 
 Define canary, set expectation
