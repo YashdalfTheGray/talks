@@ -1,6 +1,6 @@
 # Canaries and Acceptance Testing Using Docker
 
-Each of these headings will eventually turn into a a group of slides, slide break noted.
+Each of these headings will eventually turn into a group of slides, slide break noted.
 
 ## Intro
 
@@ -36,7 +36,7 @@ This slide will have a bunch of pictures in list form, mostly to signify what I'
 - **Slide break**
 - Docker came later into the picture. Working for a service that offers cloud hosted Docker, I've gotten in the mindset of using Docker for most of my personal projects and my team used all 3 OSes so Docker would also help level the playing field.
 - If I can run a project on Docker, then I can run it on my service for pretty cheap.
-- I knew Chrome could run out of a container and I saw that if you pull down the Puppeteer NPM package, it installs Chromium. The only other thing left to do was to make sure that Chromium had all of it's dependencies in the container. Easily solved by running a `sudo apt-get install` as part of the Dockerfile!
+- I knew Chrome could run out of a container and I saw that if you pull down the Puppeteer NPM package, it installs Chromium. The only other thing left to do was to make sure that Chromium had all of its dependencies in the container. Easily solved by running a `sudo apt-get install` as part of the Dockerfile!
 - Another caveat about this is that Chromium can't run as the root process in the container, Docker provides a `--init` flag while running a container that solves that problem for us too!
 - **Slide break**
 - So now I had Jest, Puppeteer, and Docker! I thought, "Excellent, let's get started". So I took some time to write tests against the production code and found that I could write tests using my stack a lot faster than I could using the internal AWS integration testing stack.
@@ -51,7 +51,7 @@ This slide will have a bunch of pictures in list form, mostly to signify what I'
 - **Slide break**
 - This is what's called a canary. It's a set of forever running tests that access and walk through your application to catch issues potentially before any customer does. Canaries at Amazon are a pretty standard thing, all services are required to have them.
 - The word comes from the phrase "canary in a coal mine". Coal miners would keep a canary bird around to detect poisonous gasses. When the canary stopped singing, it was time to leave the mine. Similarly, when our digital canary stops singing (working as expected), we know something's wrong
-- My team and I are still working on integrating this type of testing with the rest of our infrasturcture. Because of that, I've spent a whole lot of time thinking about how it can work.
+- My team and I are still working on integrating this type of testing with the rest of our infrastructure. Because of that, I've spent a whole lot of time thinking about how it can work.
 - The idea to take this further is simple, integrate with something like AWS CloudWatch Events and create events for each success and failure and have the failure email you that something's wrong.
 
 ## Tech stack
