@@ -26,8 +26,8 @@ This slide will have a bunch of pictures in list form, mostly to signify what I'
 - Okay, no big deal, my team keeps our unit testing coverage decently high, we can release, test things by hand and things should work, right?
 - The idea works...until on release day, 1 hour before public release, your integration tests are failing and there is a moment of panic - did I miss something in my feature that should be there or are the tests failing because the test runner quit unexpectedly?
 - Another dimension where this idea doesn’t work is scale. AWS is all about massive scale. We test, by hand, deployments to 18 regions; this would take anywhere from 45 minutes to an hour per region over 5 days. That's half a developer week, gone.
-- Having been through this experience more times that I am willing to accept, I can confidently say, it’s not a good look.
-- When you do actually determine that the tests are the culprit and your feature code is working as expected, trying to figure out what went wrong is usually comprised of looking at old StackOverflow posts and Github issues because the projects that this tooling uses aren’t being maintained anymore!
+- Having been through this experience more times that I am willing to accept; I can confidently say, it’s not a good look.
+- The tooling was also using deprecated dependencies. When you do actually determine that the tests are the culprit and your feature code is working as expected, trying to figure out what went wrong is usually comprised of looking at old StackOverflow posts and even older Github issues!
 - **Slide break**
 - #ThereHasToBeABetterWay
 - I started to wonder, what if we could use tools that were maintained and preferred by the Javascript community to do our acceptance testing for us!
