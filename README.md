@@ -10,7 +10,9 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Canaries and Acceptance Testing Using Docker
 
-- [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/canary/README.md)
+- [Abstract](https://yashdalfthegray.github.io/talks/canary/abstract)
+- [Presentation](https://yashdalfthegray.github.io/talks/canary)
+- [Presentation Notes](https://yashdalfthegray.github.io/talks/canary/outline)
 
 ## Using Slack, Hubot and IoT to create a virtual house assistant
 
