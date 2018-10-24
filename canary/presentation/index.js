@@ -2,17 +2,7 @@
 import React from 'react';
 
 // Import Spectacle Core tags
-import {
-  BlockQuote,
-  Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text
-} from 'spectacle';
+import { Deck, Heading, Image, Link, Slide, Text } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -22,8 +12,8 @@ require('normalize.css');
 
 const theme = createTheme(
   {
-    primary: 'white',
-    secondary: '#1F2022',
+    primary: 'black',
+    secondary: 'white',
     tertiary: '#03A9FC',
     quaternary: '#CECECE'
   },
@@ -36,57 +26,93 @@ const theme = createTheme(
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck
-        transition={['zoom', 'slide']}
-        transitionDuration={500}
-        theme={theme}>
+      <Deck transition={['zoom']} transitionDuration={500} theme={theme}>
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+          <Image src="https://secureimg.stitcher.com/feedimageswide/480x270_100921.jpg" />
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading caps textSize={60} textColor="tertiary">
+            Canaries and Acceptance Testing with Docker
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+          <Text margin="16px 0 0" textColor="secondary" size={1} fit bold>
+            Yash Kulshrestha (@yashdalfthegray)
           </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
-          </Heading>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Text textColor="tertiary" textSize={32} margin="10px">
+            Standard issue codemonkey
+          </Text>
+          <Text textColor="tertiary" textSize={32} margin="10px">
+            Gamer
+          </Text>
+          <Text textColor="tertiary" textSize={32} margin="10px">
+            Buckeye
+          </Text>
+          <Text textColor="tertiary" textSize={32} margin="10px">
+            Petrolhead
+          </Text>
+          <Text textColor="tertiary" textSize={32} margin="10px">
+            Emoji enthusiast
+          </Text>
+          <Text textColor="tertiary" textSize={32} margin="10px">
+            Person
+          </Text>
+        </Slide>
+        <Slide transition={['zoom']}>
           <Heading size={1} textColor="secondary">
-            Heading 1
+            🙋‍♂️ 🖥 👉 ☁️
           </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading margin="0 0 24px" size={1} textColor="secondary">
+            Agenda
           </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
+          <Image src="https://i.imgflip.com/2kty7g.jpg" height="140px" />
+          <Image
+            src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"
+            height="140px"
+          />
+          <Image
+            src="http://heppsanhometraining.com/wp-content/uploads/2018/08/to-infinity-and-beyond-buzz-lightyear-toy-story-passiton-with-buzz-lightyear-quotes-825x510.jpg"
+            height="140px"
+          />
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Link
+            href="https://github.com/yashdalfthegray"
+            target="_blank"
+            textColor="tertiary"
+            textSize={48}
+            margin="24px">
+            Github
+          </Link>
+          <Link
+            href="https://twitter.com/yashdalfthegray"
+            target="_blank"
+            textColor="tertiary"
+            textSize={48}
+            margin="24px">
+            Twitter
+          </Link>
+          <Link
+            href="https://yashdalfthegray.github.io"
+            target="_blank"
+            textColor="tertiary"
+            textSize={48}
+            margin="24px">
+            Website
+          </Link>
+          <Text textColor="secondary" textSize={48} margin="24px ">
+            ~~
           </Text>
-        </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
-          </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+          <Link
+            href="https://yashdalfthegray.github.io/talks/canary/outline"
+            target="_blank"
+            textColor="tertiary"
+            textSize={48}
+            margin="24px">
+            Presentation Notes
+          </Link>
         </Slide>
       </Deck>
     );
