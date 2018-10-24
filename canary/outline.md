@@ -1,6 +1,10 @@
 # Canaries and Acceptance Testing Using Docker
 
-Each of these headings will eventually turn into a group of slides, slide break noted.
+Each of these headings generally refer to a group of slides, slide breaks are noted.
+
+## "Something you should know"
+
+We figured out a long time ago, as a people, that pictures are worth a thousand words so the presentation deck that goes with this outline contains a lot of pictures. Some are helpful, some are memes. Oh, and emoji, the presentation makes tasteful use of emoji.
 
 ## Intro
 
