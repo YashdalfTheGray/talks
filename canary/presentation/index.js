@@ -23,12 +23,22 @@ const theme = createTheme(
   }
 );
 
+const images = {
+  qrLink: require('../assets/qr-link.png')
+};
+
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={['zoom']} transitionDuration={500} theme={theme}>
         <Slide transition={['zoom']} bgColor="primary">
           <Image src="https://secureimg.stitcher.com/feedimageswide/480x270_100921.jpg" />
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading margin="0 0 36px" textSize={60} textColor="tertiary">
+            http://bit.ly/docker-canary
+          </Heading>
+          <Image src={images.qrLink} />
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
           <Heading caps textSize={60} textColor="tertiary">

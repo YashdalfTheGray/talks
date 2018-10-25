@@ -17,7 +17,9 @@ I work for Amazon Web Services. My team manages the Elastic Container Service co
 
 ## Agenda
 
-This slide will have a bunch of pictures in list form, mostly to signify what I'm going to be talking about later in the talk.
+- Grandma finds the internet - where we were as a team, how did the project get started
+- Thumbs up - where we are now that the project is live
+- To infinity and beyond - where I envision the project to go
 
 ## Inception
 
@@ -85,15 +87,15 @@ This slide will have a bunch of pictures in list form, mostly to signify what I'
 
 ## Demos
 
-- React/Redux todo demo link
-- Integration tests using the same stack for todo app link
+- [Todos demo app](https://github.com/YashdalfTheGray/todos)
+- [Todos demo app integration tests](https://github.com/YashdalfTheGray/todos-tester)
 
 ## Resources
 
-- Presentation notes
-- Presentation
-- Twitter link
-- Github link
-- Website link
+- [Presentation notes](https://yashdalfthegray.github.io/talks/canary/outline)
+- [Presentation](https://yashdalfthegray.github.io/talks/canary/)
+- [Twitter link](https://twitter.com/yashdalfthegray)
+- [Github link](https://github.com/YashdalfTheGray)
+- [Website link](https://yashdalfthegray.github.io)
 
 ## Thanks
