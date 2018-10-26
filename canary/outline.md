@@ -4,7 +4,7 @@ Each of these headings generally refer to a group of slides, slide breaks are no
 
 ## "Something you should know"
 
-We figured out a long time ago, as a people, that pictures are worth a thousand words so the presentation deck that goes with this outline contains a lot of pictures. Some are helpful, some are memes. Oh, and emoji, the presentation makes tasteful use of emoji.
+We figured out a long time ago, as a people, that pictures are worth a thousand words so the presentation that goes with this outline contains a lot of pictures. Some are helpful, some are memes.
 
 ## Intro
 
@@ -13,13 +13,19 @@ Yash Kulshrestha
 
 ## Cloud emoji
 
-I work for Amazon Web Services. My team manages the Elastic Container Service console. It's a relatively complex webapp and as some of you might be familiar, AWS is a regional service. ECS, my service, exists in 18 regions. This will become important later in the story.
+I work for Amazon Web Services. My team manages the Elastic Container Service console. It's a relatively complex webapp with integrations to many other AWS services!
 
 ## Agenda
 
 - Grandma finds the internet - where we were as a team, how did the project get started
 - Thumbs up - where we are now that the project is live
 - To infinity and beyond - where I envision the project to go
+
+## Context
+
+- Console - AWS uses the word `console` to mean the web interface to AWS. The ECS console supports the ECS service and gives users a GUI to the service. This term is interchangable with `web app`.
+- Region - AWS is a regionalized service which means that we have data centers all over the world and you can choose to run your service in the one closest to you. Amazon ECS currently exists in 18 regions; this will become important later in our story.
+- Deployment - used as a synonym for `push to production`. We use rolling deployments because if we don't, then we take down the service while our servers are busy getting new code.
 
 ## Inception
 

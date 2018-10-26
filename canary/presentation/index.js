@@ -30,7 +30,10 @@ const images = {
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={['zoom']} transitionDuration={500} theme={theme}>
+      <Deck
+        transition={['zoom', 'fade']}
+        transitionDuration={500}
+        theme={theme}>
         <Slide transition={['zoom']} bgColor="primary">
           <Image src="https://secureimg.stitcher.com/feedimageswide/480x270_100921.jpg" />
         </Slide>
@@ -49,6 +52,9 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
+          <Text textColor="secondary" textSize={32} margin="10px">
+            Yash
+          </Text>
           <Text textColor="tertiary" textSize={32} margin="10px">
             Standard issue codemonkey
           </Text>
@@ -87,7 +93,47 @@ export default class Presentation extends React.Component {
             height="140px"
           />
         </Slide>
-        <Slide transition={['fade']} bgColor="primary">
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            Context
+          </Heading>
+          <Text textColor="tertiary" textSize={36} margin="10px">
+            Console
+          </Text>
+          <Text textColor="tertiary" textSize={36} margin="10px">
+            Region
+          </Text>
+          <Text textColor="tertiary" textSize={36} margin="10px">
+            Deployment
+          </Text>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            Feature Lifecycle
+          </Heading>
+          <Text textColor="tertiary" textSize={48} margin="10px">
+            🗓 → 🖥 → ✅
+          </Text>
+        </Slide>
+        <Slide transition={['fade']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            Feature Lifecycle
+          </Heading>
+          <Text textColor="tertiary" textSize={48} margin="10px">
+            🗓 → 🖥 → 🖥
+          </Text>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            Let's talk about tests, baby
+          </Heading>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            #ThereHasToBeABetterWay
+          </Heading>
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
           <Link
             href="https://github.com/yashdalfthegray"
             target="_blank"
