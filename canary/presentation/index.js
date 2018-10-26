@@ -24,7 +24,12 @@ const theme = createTheme(
 );
 
 const images = {
-  qrLink: require('../assets/qr-link.png')
+  qrLink: require('../assets/qr-link.png'),
+  thinkingFace: require('../assets/thinking-face.gif'),
+  jestLogo: require('../assets/jest.svg'),
+  puppeteerLogo: require('../assets/puppeteer.png'),
+  dockerLogo: require('../assets/docker.png'),
+  powerpuffGirls: require('../assets/powerpuff.jpg')
 };
 
 export default class Presentation extends React.Component {
@@ -71,7 +76,7 @@ export default class Presentation extends React.Component {
             Emoji enthusiast
           </Text>
           <Text textColor="tertiary" textSize={32} margin="10px">
-            Person
+            Audiophile
           </Text>
         </Slide>
         <Slide transition={['zoom']}>
@@ -132,6 +137,90 @@ export default class Presentation extends React.Component {
           <Heading size={4} margin="0 0 36px" textColor="secondary">
             #ThereHasToBeABetterWay
           </Heading>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image src={images.thinkingFace} />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={1} textColor="secondary">
+            💡
+          </Heading>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image src={images.jestLogo} height="240px" />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image src={images.puppeteerLogo} height="240px" />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image src={images.dockerLogo} height="240px" />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 24px" textColor="secondary">
+            Let's get it started!
+          </Heading>
+          <Text textColor="tertiary" textSize={24}>
+            (Ha! Let's get it started in here!)
+          </Text>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            The future is canaries
+          </Heading>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image
+            src="https://static1.squarespace.com/static/518f5d62e4b075248d6a3f90/t/544ca7a9e4b0d4afb025e2e7/1414309804946/"
+            height="600px"
+          />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            The Tech
+          </Heading>
+          <Image
+            src="http://8.media.bustedtees.cvcdn.com/9/-/bustedtees.9341ea69-a0fc-411f-ac58-c2dd6d6d.gif"
+            height="400px"
+          />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image src="https://i.stack.imgur.com/9SvDE.jpg" height="240px" />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image
+            src="http://images2.fanpop.com/image/photos/9800000/Chemical-X-powerpuff-girls-movie-9885363-427-320.jpg"
+            height="240px"
+          />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Image src={images.powerpuffGirls} height="240px" />
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            Write once, run everywhere
+          </Heading>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={4} margin="0 0 36px" textColor="secondary">
+            Demos
+          </Heading>
+          <Link
+            href="https://github.com/YashdalfTheGray/todos"
+            target="_blank"
+            textColor="tertiary"
+            textSize={48}
+            margin="24px">
+            Todos demo app
+          </Link>
+          <p />
+          <Link
+            href="https://github.com/YashdalfTheGray/todos-tester"
+            target="_blank"
+            textColor="tertiary"
+            textSize={48}
+            margin="24px">
+            Todos demo app integration tests
+          </Link>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
           <Link
