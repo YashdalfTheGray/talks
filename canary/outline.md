@@ -13,7 +13,7 @@ Yash Kulshrestha
 
 ## Cloud emoji
 
-I work for Amazon Web Services. My team manages the Elastic Container Service console. It's a relatively complex webapp with integrations to many other AWS services!
+I work for a large cloud provider. My team manages a hosted docker service console. The details of the team aren't really all that important, the only important tidbit is that it's a relatively complex webapp with integrations to many other services!
 
 ## Agenda
 
@@ -23,21 +23,21 @@ I work for Amazon Web Services. My team manages the Elastic Container Service co
 
 ## Context
 
-- Console - AWS uses the word `console` to mean the web interface to AWS. The ECS console supports the ECS service and gives users a GUI to the service. This term is interchangable with `web app`.
-- Region - AWS is a regionalized service which means that we have data centers all over the world and you can choose to run your service in the one closest to you. Amazon ECS currently exists in 18 regions; this will become important later in our story.
+- Console - My team uses the word `console` to mean the web interface to my service. This term is interchangable with `web app`.
+- Region - We is a regionalized service which means that we have data centers all over the world and you can choose to run your service in the one closest to you. We are currently exists in 18 regions; this will become important later in our story.
 - Deployment - used as a synonym for `push to production`. We use rolling deployments because if we don't, then we take down the service while our servers are busy getting new code.
 
 ## Inception
 
 - Summer 2018
-- The feature release process at AWS follows the usual planning, development, testing and release process. We figure out what we need to ship, get some engineers to work on it, get a product manager to test that the feature meets their requirements (this is what we call acceptance testing) and then we release it to all of our users.
+- The feature release process follows the usual planning, development, testing and release process. We figure out what we need to ship, get some engineers to work on it, get a product manager to test that the feature meets their requirements (this is what we call acceptance testing) and then we release it to all of our users.
 - That’s the ideal situation, what ends up happening more often than not is that the product managers give us requirements and we test to make sure that those requirements match what we developed. This usually happens because our project managers are juggling multiple projects at once.
 - **Slide break**
 - My team was particularly frustrated with our acceptance testing process because as we worked on the feature and it started to take shape, more user stories would inevitably come up that we didn’t account for.
-- There are integration (or end-to-end) testing tools that exist at AWS that my team uses but we often don’t get enough time to develop testing around all of the user stories that we should be testing for.
+- There are integration (or end-to-end) testing tools that exist that my team uses but we often don’t get enough time to develop testing around all of the user stories that we should be testing for.
 - Okay, no big deal, my team keeps our unit testing coverage decently high, we can release, test things by hand and things should work, right?
 - The idea works...until on release day, 1 hour before public release, your integration tests are failing and there is a moment of panic - did I miss something in my feature that should be there or are the tests failing because the test runner quit unexpectedly?
-- Another dimension where this idea doesn’t work is scale. AWS is all about massive scale. We test, by hand, deployments to 18 regions; this would take anywhere from 45 minutes to an hour per region over 5 days. That's half a developer week, gone.
+- Another dimension where this idea doesn’t work is scale. My service is all about massive scale. We test, by hand, deployments to 18 regions; this would take anywhere from 45 minutes to an hour per region over 5 days. That's half a developer week, gone.
 - Having been through this experience more times that I am willing to accept; I can confidently say, it’s not a good look.
 - The tooling was also using deprecated dependencies. When you do actually determine that the tests are the culprit and your feature code is working as expected, trying to figure out what went wrong is usually comprised of looking at old StackOverflow posts and even older Github issues!
 - **Slide break**
@@ -58,11 +58,11 @@ I work for Amazon Web Services. My team manages the Elastic Container Service co
 - Puppeteer was pretty strictly tied to Google Chrome but it presented actions like click and type, which I could use to simulate user behavior easier than having to adjust my test code to account for dynamic content. Model the user, check.
 - **Slide break**
 - Docker came later into the picture. Working for a service that offers cloud hosted Docker, I've gotten in the mindset of using Docker for most of my personal projects and my team used all 3 OSes so Docker would also help level the playing field.
-- Furthermore, if I can run a project on Docker, I can run it on my AWS service, ECS as well!
+- Furthermore, if I can run a project on Docker, I can run it on my service and other hosted Docker services as well!
 - I knew Chrome could run out of a container and I saw that if you pull down the Puppeteer NPM package, it installs Chromium. The only other thing left to do was to make sure that Chromium had all of its dependencies in the container. This was easily solved by running a `sudo apt-get install` as part of the Dockerfile!
 - Another caveat about this is that Chromium can't run as the root process in the container, Docker provides a `--init` flag while running a container that solves that problem for us too! Minimal setup time, check!
 - **Slide break**
-- So now I had Jest, Puppeteer, and Docker! I thought, "Excellent, let's get started". So I took some time to write tests against the production code and found that I could write tests using my stack a lot faster than I could using the internal AWS integration testing stack.
+- So now I had Jest, Puppeteer, and Docker! I thought, "Excellent, let's get started". So I took some time to write tests against the production code and found that I could write tests using my stack a lot faster than I could using the internal integration testing stack.
 - Since I was just using this to do acceptance testing when we would deploy new features, we didn't have to replace our existing infrastructure, just augment it with the testing code that I was writing.
 - I took my science project to work and I showed it off; my teammates thought it was a pretty great idea and while running deployments, my team started using it. It cut down as much as 30 minutes of acceptance testing per region and covered more of the use cases.
 - Think about that, 30 minutes per region, 18 regions, that's 9 hours. That's a whole work day back to the developer so they can focus on their work rather than click buttons manually.
@@ -72,10 +72,10 @@ I work for Amazon Web Services. My team manages the Elastic Container Service co
 - Right now, this testing that we're doing is pretty manual - we release changes, we run this tool and we verify that there hasn't been any regression; your basic acceptance testing.
 - What I want to do, and it is related to the second part of my talk - canaries. I don't just want to find potential issues when I'm looking for it, given that we've created a significant amount of integration tests for our app, I want them to run constantly and break and tell me when there has been an error that we might have missed or when there is a dependency of our web app that isn't working.
 - **Slide break**
-- This is what's called a canary. It's a set of forever running tests that access and walk through your application to catch issues potentially before any customer does. Canaries at AWS are a pretty standard thing, all services are required to have them.
+- This is what's called a canary. It's a set of forever running tests that access and walk through your application to catch issues potentially before any customer does. Canaries are a pretty standard thing for us, all services and consoles are required to have them.
 - The word comes from the phrase "canary in the coal mine". Coal miners would keep a canary bird around to detect poisonous gasses. When the canary stopped singing, it was time to leave the mine. Similarly, when our digital canary stops singing (working as expected), we know something's wrong.
 - My team and I are still working on integrating this type of testing with the rest of our infrastructure. Because of that, I've spent a whole lot of time thinking about how it can work.
-- The idea to take this further is simple, integrate with something like AWS CloudWatch Events and create events for each success and failure and have the failure email you that something's wrong.
+- The idea to take this further is simple, integrate with something like Amazon CloudWatch Events and create events for each success and failure and have the failure email you that something's wrong.
 
 ## Tech stack
 
@@ -85,10 +85,10 @@ I work for Amazon Web Services. My team manages the Elastic Container Service co
 - **KitKat break**
 - Then we add Docker. Not only does this give us the ability to run this suite of tests across Windows, macOS and Linux, it also lets us run this on any cloud hosted container platform or even on our own pre-prod servers just by downloading Docker.
 - **KitKat break**
-- This is one of the key takeaways today, the whole stack, Chromium + Jest + Puppeteer runs on Docker which can then be run pretty much anywhere. It's truly, write once, run anywhere code. As an example, I can run this suite of tests on my personal computer, on my work computer, across my team's computers, on our servers and even under AWS's hosted container offering, Elastic Container Service. All so that I know that the code that I'm shipping is doing what I intended it to and that outages in my service aren't being communicated to me by my customers but by my canary. Happy developers, happy customers.
+- This is one of the key takeaways today, the whole stack, Chromium + Jest + Puppeteer runs on Docker which can then be run pretty much anywhere. It's truly, write once, run anywhere code. As an example, I can run this suite of tests on my personal computer, on my work computer, across my team's computers, on our servers and even on the cloud's hosted container offerings. All so that I know that the code that I'm shipping is doing what I intended it to and that outages in my service aren't being communicated to me by my customers but by my canary. Happy developers, happy customers.
 - **Slide break**
-- The last part of the stack focuses on the canary piece. We want these tests to run constantly, over and over and inform us of any issues that happen when something goes, not as planned. We already have the tests, we can use something like an ECS Service or a cronjob or a process manager to run these things over and over again.
-- The notification system is also simple. We can integrate the tests with CloudWatch events, every time a test runs, we fire off an event that says what platform it was running on and what was the result. We can then use an SNS topic as the target of the CloudWatch Event to send us emails every time something fails and where the failure happened, whether in preprod, staging or prod.
+- The last part of the stack focuses on the canary piece. We want these tests to run constantly, over and over and inform us of any issues that happen when something goes, not as planned. We already have the tests, we can use something like a cronjob or a process manager to run these things over and over again.
+- The notification system is also simple. We can integrate the tests with Amazon CloudWatch Events, every time a test runs, we fire off an event that says what platform it was running on and what was the result. We can then use an Amazon SNS topic as the target of the CloudWatch Event to send us emails every time something fails and where the failure happened, whether in preprod, staging or prod.
 - Gotta admit, that sounds like pretty good coverage for your service. And it's all enabled by containerizing our tests - a simple but very effective mechanism to generalize your tests!
 
 ## Demos
