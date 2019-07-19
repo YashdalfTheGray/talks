@@ -94,7 +94,7 @@ export default class Presentation extends React.Component {
             height="140px"
           />
           <Image
-            src="http://heppsanhometraining.com/wp-content/uploads/2018/08/to-infinity-and-beyond-buzz-lightyear-toy-story-passiton-with-buzz-lightyear-quotes-825x510.jpg"
+            src="https://ih0.redbubble.net/image.536782866.1229/flat,550x550,075,f.jpg"
             height="140px"
           />
         </Slide>
