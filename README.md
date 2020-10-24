@@ -51,3 +51,7 @@ Home to various talks, proposed ideas and abstracts.
 ## Creating a smart HVAC system with Particle Photons
 
 - [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/hvac/README.md)
+
+## Async work handoff between threads in Java
+
+- [Presentation Notes](https://github.com/YashdalfTheGray/talks/blob/master/channel/README.md)
