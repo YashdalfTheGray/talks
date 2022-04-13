@@ -338,6 +338,7 @@
               <${Heading} fontSize="h3">what is it</${Heading}>
               <${Heading} fontSize="h3">how to use it</${Heading}>
               <${Heading} fontSize="h3">what to be careful about</${Heading}>
+              <${Heading} fontSize="h3">summary</${Heading}>
             </${FlexBox}>
             <${Notes}>
               <h3>Agenda</h3>
@@ -345,6 +346,7 @@
                 <li>what is it?</li>
                 <li>how to use it</li>
                 <li>what to be careful about</li>
+                <li>summary</li>
               </ul>
             </${Notes}>
           </${Slide}>
@@ -586,6 +588,28 @@
           <${Slide} backgroundColor="background">
             <${FlexBox} height="100%" flexDirection="column">
               <${UnorderedList}>
+                <${ListItem} color="secondary">compatibility score</${ListItem}>
+                <${ListItem} color="secondary">avoid major version updates</${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>general things</h3>
+              <ul>
+                <li>the compatibility score is sort of best effort</li>
+                <li>sometimes, even though things work for most repositories</li>
+                <li>it can break for edge cases</li>
+                <li>it's worthwhile to understand what compatibility score we are okay with accepting</li>
+                <li>we should still avoid major version upgrades through dependabot</li>
+                <li>mostly because major version (according to semver) can include breaking changes</li>
+                <li>and even though automated tests might pass</li>
+                <li>it could have unintended consequences</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
                 <${ListItem} color="secondary">set <${CodeSpan} color="quaternary">open-pull-requests-limit</${CodeSpan}></${ListItem}>
                 <${ListItem} color="secondary">highly recommended</${ListItem}>
                 <${ListItem} color="secondary">should also set schedule</${ListItem}>
@@ -687,6 +711,17 @@
                 <li>can zip up multiple artifacts into a tarball</li>
                 <li>and then after download, can unzip the tarball</li>
               </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Heading} fontSize="64px">🏁</${Heading}>
+              <${Heading} color="primary">summary</${Heading}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>Checkpoint slide - summary</h3>
+              <p>Checkpoint slides serve as a transition between topics and are a great place to ask questions on the previous topic.</p>
             </${Notes}>
           </${Slide}>
 
