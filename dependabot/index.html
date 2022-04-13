@@ -42,6 +42,9 @@
       const html = htm.bind(React.createElement);
       const dependabotLogo =
         'https://avatars.githubusercontent.com/u/27347476?v=4';
+      const dependabotPr = 'assets/dependabot-pr.png';
+      const dependabotCommands = 'assets/dependabot-commands.png';
+      const dependabotActivity = 'assets/dependabot-activity.png';
 
       const configSample = `
         version: 2
@@ -412,13 +415,108 @@
               </${CodePane}>
             </${FlexBox}>
             <${Notes}>
-              <h3>configuration</h3>
+              <h3>minimum requirements for setup</h3>
               <ul>
-                <li>dependabot.yml configuration file stored in the .github directory</li>
-                <li>two keys are required, one called version and one called updates</li>
-                <li>there is another key that can be added called registries for private registries to pull updates from</li>
-                <li>the file must start with version: 2, other versions represent public preview, which are no longer acceptable</li>
-                <li>whenever a change is detected in the config file, the dependency check will run again, even if there are no dependencies that get updated</li>
+                <li>version and updates are the two required keys</li>
+                <li>under updates, we tell dependabot where each package ecosystem lives</li>
+                <li>this example has two package ecosystems so there are two elements in the updates list</li>
+                <li>the first one is go modules, located in the root of the repository</li>
+                <li>the package-ecosystem and directory keys are the minimum configuration required</li>
+                <li>we also set a schedule, this one is set to scan on sunday at 3am pst</li>
+                <li>you can also list reviewers who will be asked to review the pull request when dependabot creates it</li>
+                <li>we see another ecosystem next, this one for github actions</li>
+                <li>dependabot will also update github action versions</li>
+                <li>the package-ecosystem and directory key allows users to configure all the languages using one file</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
+                <${ListItem} color="secondary"><${CodeSpan} color="quaternary">allow</${CodeSpan}></${ListItem}>
+                <${ListItem} color="secondary"><${CodeSpan} color="quaternary">ignore</${CodeSpan}></${ListItem}>
+                <${ListItem} color="secondary"><${CodeSpan} color="quaternary">commit-message</${CodeSpan}></${ListItem}>
+                <${ListItem} color="secondary"><${CodeSpan} color="quaternary">label</${CodeSpan}></${ListItem}>
+                <${ListItem} color="secondary"><${CodeSpan} color="quaternary">open-pull-requests-limit</${CodeSpan}></${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>other options</h3>
+              <ul>
+                <li>allow tells dependabot which dependencies to update, options are direct, all, indirect, production, development</li>
+                <li>different ecosysystems support different options, direct and all are the only ones supported across the board</li>
+                <li>ignore works the other way, it tells dependabot to specifically ignore dependencies or versions</li>
+                <li>commit message allows customization of the commit message</li>
+                <li>label tells dependabot to assign a label to the pull request, there is also a milestone option</li>
+                <li>open pull requests limit stops dependabot from spamming pull requests into the queue, very useful for projects with lots of dependencies</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+            <${Heading} color="secondary">
+                secrets
+              </${Heading}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>secrets</h3>
+              <ul>
+                <li>for private registry authentication, you can provide dependabot secrets</li>
+                <li>these can be configured where you would usually configure repository secrets</li>
+                <li>these secrets are only available to dependabot and only these secrets are available to dependabot</li>
+                <li>this is done to provide a security boundary between what access dependabot has</li>
+                <li>and what shouldn't be known by dependabot</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Image} src=${dependabotPr}/>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>example</h3>
+              <ul>
+                <li>this is an example of a pull request that we receive after setting everything up</li>
+                <li>dependabot links the updated package, the release notes, and the comments</li>
+                <li>it also determines a compatibility score from other public projects that have automated tests</li>
+                <li>this is where some of the configuration options will help, reviewers, assignees, labels, milestones</li>
+                <li>by default, dependabot will tag pull requests with dependencies and the ecosystem</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Image} src=${dependabotCommands}/>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>commands</h3>
+              <ul>
+                <li>each pull request has a commands section</li>
+                <li>this section details commands that you can take on that particular pull request</li>
+                <li>each command also offers a description of what it will do</li>
+                <li>for example, you can have dependabot automatically merge things once automated tests pass</li>
+                <li>you can also ignore dependencies, specific versions, major and minor</li>
+                <li>and you can also manage the pull request lifecycle</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Image} src=${dependabotActivity}/>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>activity log</h3>
+              <ul>
+                <li>you can find the activity log for dependabot through insights -> dependency graph</li>
+                <li>clicking on the time on the a particular row will pull up the activity log</li>
+                <li>this log tells you what dependabot did when it ran last</li>
+                <li>you can use this to determine if there are strange errors in your dependency checking</li>
+                <li>you can also use this to determine if dependabot has proper access to private resources</li>
               </ul>
             </${Notes}>
           </${Slide}>

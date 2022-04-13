@@ -16,6 +16,18 @@
 
 ## Checkpoint - how to use it
 
+## Configuration
+
+## Minimum requirements for setup
+
+## Other options
+
+- [There is a lot of configuration that you can customize](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)
+
+## Example Pull Request
+
+- [About compatibility score](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates#about-compatibility-scores)
+
 ## Checkpoint - what to be careful about
 
 ## Thank you
