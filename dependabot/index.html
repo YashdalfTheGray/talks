@@ -100,6 +100,7 @@
         # build.yml
         jobs:
           steps:
+            # other steps
             - name: 'Upload artifacts for the test workflow'
               uses: actions/upload-artifact@v2
               with:
@@ -116,6 +117,7 @@
                 workflow_conclusion: success
                 name: <artifact_name>
                 path: bin/
+            # other steps
         `;
       const uploadArtifactsSampleRanges = [
         [1, 8],
