@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dependable Dependabot</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17.0.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-is@17.0.1/umd/react-is.production.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.7.2/prop-types.min.js"></script>
+    <script src="https://unpkg.com/spectacle@^9/dist/spectacle.min.js"></script>
+
+    <script type="module">
+      const {
+        FlexBox,
+        Heading,
+        UnorderedList,
+        CodeSpan,
+        OrderedList,
+        ListItem,
+        Link,
+        FullScreen,
+        Progress,
+        Appear,
+        Stepper,
+        Slide,
+        Deck,
+        Text,
+        Grid,
+        Box,
+        Image,
+        CodePane,
+        Notes,
+      } = Spectacle;
+
+      import htm from 'https://unpkg.com/htm@^3?module';
+      const html = htm.bind(React.createElement);
+      const dependabotLogo =
+        'https://avatars.githubusercontent.com/u/27347476?v=4';
+
+      const theme = {
+        colors: {
+          background: '#002f6c',
+          primary: '#f06292',
+          secondary: '#eee',
+          tertiary: '#aaa',
+          quaternary: '#ff94c2',
+        },
+        fonts: {
+          header: '"Open Sans Condensed", Helvetica, Arial, sans-serif',
+          text: '"Open Sans Condensed", Helvetica, Arial, sans-serif',
+        },
+      };
+
+      const template = () => html`
+        <${FlexBox} justifyContent="space-between" position="absolute" bottom=${0} width=${1}>
+          <${Box} padding="0 1em">
+            <${FullScreen} />
+          </${Box}>
+          <${Box} padding="1em">
+            <${Progress} />
+          </${Box}>
+        </${FlexBox}>
+      `;
+
+      const centerGridItemsStyle = {
+        justifyItems: 'center',
+      };
+
+      const Presentation = () => html`
+        <${Deck} theme=${theme} template=${template}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Image} src=${dependabotLogo} width=${200} />
+              <${Heading} color="primary">
+                Dependable Dependabot
+              </${Heading}>
+              <${Text} color="secondary">
+                Yash Kulshrestha
+              </${Text}>
+            </${FlexBox}>
+            <${Notes}>
+              <ul>
+                <li>Dependabot used to be its own company when it started</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Heading} fontSize="h3">what is it</${Heading}>
+              <${Heading} fontSize="h3">how to use it</${Heading}>
+              <${Heading} fontSize="h3">what to be careful about</${Heading}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>Agenda</h3>
+              <ul>
+                <li>what is it?</li>
+                <li>how to use it</li>
+                <li>what to be careful about</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Heading} fontSize="64px">🏁</${Heading}>
+              <${Heading} color="primary">what is it</${Heading}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>Checkpoint slide - what is it</h3>
+              <p>Checkpoint slides serve as a transition between topics and are a great place to ask questions on that particular topic.</p>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
+                <${ListItem} color="secondary">dependency management tool</${ListItem}>
+                <${ListItem} color="secondary">part of github as of 2019</${ListItem}>
+                <${ListItem} color="secondary">came out of public preview in 2021</${ListItem}>
+                <${ListItem} color="secondary">written in ruby</${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>overview</h3>
+              <ul>
+                <li>dependabot can be used to manage repository dependencies in a variety of languages</li>
+                <li>even though it started out as its own company, it got bought by github and then was in public preview until 2021</li>
+                <li>written in ruby, as a collection of gems</li>
+                <li>also has support for gitlab, running locally</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Grid} style=${centerGridItemsStyle} flex=${1} gridTemplateColumns="1fr 1fr 1fr" gridTemplateRows="1fr 1fr 1fr 1fr">
+                <${Text} color="secondary">ruby</${Text}>
+                <${Text} color="secondary">javascript</${Text}>
+                <${Text} color="secondary">python</${Text}>
+                <${Text} color="secondary">php</${Text}>
+                <${Text} color="secondary">elixir</${Text}>
+                <${Text} color="secondary">elm</${Text}>
+                <${Text} color="secondary">go</${Text}>
+                <${Text} color="secondary">rust</${Text}>
+                <${Text} color="secondary">java</${Text}>
+                <${Text} color="secondary">.net</${Text}>
+                <${Text} color="secondary">github actions</${Text}>
+                <${Text} color="secondary">terraform</${Text}>
+              </${Grid}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>language support</h3>
+              <ul>
+                <li>supports ruby, javascript, python, php, elixir, elm, go, rust, java, .net</li>
+                <li>additionally supports updating github action files, terraform files, dockerfiles</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
+                <${ListItem} color="secondary">works on a schedule</${ListItem}>
+                <${ListItem} color="secondary">kinda useful activity log</${ListItem}>
+                <${ListItem} color="secondary">configured via yaml</${ListItem}>
+                <${ListItem} color="secondary">lots of ways to customize</${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>ability</h3>
+              <ul>
+                <li>schedule, package manager are essential but configurable</li>
+                <li>comes with an activity log so that we can keep track of what has been checked when</li>
+                <li>is enabled by adding a yaml configuration file to the repository</li>
+                <li>offers a lot of customization to support different development plans</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Heading} fontSize="64px">🏁</${Heading}>
+              <${Heading} color="primary">how to use it</${Heading}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>Checkpoint slide - how to use it</h3>
+              <p>Checkpoint slides serve as a transition between topics and are a great place to ask questions on that particular topic.</p>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Heading} fontSize="h1" color="primary">thank you</${Heading}>
+              <${UnorderedList}>
+                <${ListItem} color="quaternary">
+                  <${Link} target="_blank" href="https://yashdalfthegray.github.io/talks/dependabot/notes">presentation notes</${Link}>
+                </${ListItem}>
+                <${ListItem} color="quaternary">
+                  <${Link} target="_blank" href="https://github.com/YashdalfTheGray">github</${Link}>
+                </${ListItem}>
+                <${ListItem} color="quaternary">
+                  <${Link} target="_blank" href="https://yashkulshrestha.com">website</${Link}>
+                </${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>done</h3>
+            </${Notes}>
+          </${Slide}>
+        </${Deck}>
+      `;
+
+      ReactDOM.render(
+        html`<${Presentation} />`,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
