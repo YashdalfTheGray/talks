@@ -101,21 +101,21 @@
         jobs:
           steps:
             - name: 'Upload artifacts for the test workflow'
-            uses: actions/upload-artifact@v2
-            with:
-              name: <artifact_name>
-              path: <the_path_to_the_artifact>
+              uses: actions/upload-artifact@v2
+              with:
+                name: <artifact_name>
+                path: <the_path_to_the_artifact>
 
         # test.yml
         jobs:
           steps:
-          - name: 'Download artifacts from the build workflow'
-            uses: dawidd6/action-download-artifact@v2
-            with:
-              workflow: build.yml
-              workflow_conclusion: success
-              name: <artifact_name>
-              path: bin/
+            - name: 'Download artifacts from the build workflow'
+              uses: dawidd6/action-download-artifact@v2
+              with:
+                workflow: build.yml
+                workflow_conclusion: success
+                name: <artifact_name>
+                path: bin/
         `;
       const uploadArtifactsSampleRanges = [
         [1, 8],
