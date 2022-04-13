@@ -49,24 +49,24 @@
       const configSample = `
         version: 2
         updates:
-          - package-ecosystem: "gomod"
-            directory: "/"
+          - package-ecosystem: 'gomod'
+            directory: '/'
             schedule:
-              interval: "weekly"
-              day: "sunday"
-              time: "03:00"
-              timezone: "America/Los_Angeles"
+              interval: 'weekly'
+              day: 'sunday'
+              time: '03:00'
+              timezone: 'America/Los_Angeles'
             reviewers:
-              - "YashdalfTheGray"
-          - package-ecosystem: "github-actions"
-            directory: "/"
+              - 'YashdalfTheGray'
+          - package-ecosystem: 'github-actions'
+            directory: '/'
             schedule:
-              interval: "weekly"
-              day: "sunday"
-              time: "03:00"
-              timezone: "America/Los_Angeles"
+              interval: 'weekly'
+              day: 'sunday'
+              time: '03:00'
+              timezone: 'America/Los_Angeles'
             reviewers:
-              - "YashdalfTheGray"
+              - 'YashdalfTheGray'
         `;
       const configSampleRanges = [
         [1, 2],
@@ -75,6 +75,57 @@
         [5, 9],
         [10, 11],
         [12, 20],
+      ];
+
+      const githubActionSample = `
+        # build.yml
+        name: Build
+        on: [push, pull_request]
+        jobs:
+          # ...
+
+        # test.yml
+        name: Test
+        on:
+          workflow_run:
+            workflows: ['Build']
+            types:
+              - completed
+        jobs:
+          # ...
+        `;
+      const githubActionSampleRanges = [[1, 5], [6, 15], [9, 13], 2, 11];
+
+      const uploadArtifactsSample = `
+        # build.yml
+        jobs:
+          steps:
+            - name: 'Upload artifacts for the test workflow'
+            uses: actions/upload-artifact@v2
+            with:
+              name: <artifact_name>
+              path: <the_path_to_the_artifact>
+
+        # test.yml
+        jobs:
+          steps:
+          - name: 'Download artifacts from the build workflow'
+            uses: dawidd6/action-download-artifact@v2
+            with:
+              workflow: build.yml
+              workflow_conclusion: success
+              name: <artifact_name>
+              path: bin/
+        `;
+      const uploadArtifactsSampleRanges = [
+        [1, 8],
+        [4, 8],
+        [10, 19],
+        [13, 19],
+        1,
+        16,
+        7,
+        18,
       ];
 
       const theme = {
@@ -517,6 +568,124 @@
                 <li>this log tells you what dependabot did when it ran last</li>
                 <li>you can use this to determine if there are strange errors in your dependency checking</li>
                 <li>you can also use this to determine if dependabot has proper access to private resources</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${Heading} fontSize="64px">🏁</${Heading}>
+              <${Heading} color="primary">what to be careful of</${Heading}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>Checkpoint slide - what to be careful of</h3>
+              <p>Checkpoint slides serve as a transition between topics and are a great place to ask questions on the previous topic.</p>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
+                <${ListItem} color="secondary">set <${CodeSpan} color="quaternary">open-pull-requests-limit</${CodeSpan}></${ListItem}>
+                <${ListItem} color="secondary">highly recommended</${ListItem}>
+                <${ListItem} color="secondary">should also set schedule</${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>managing prs</h3>
+              <ul>
+                <li>dependabot creates one pr per dependency found in need of update</li>
+                <li>for repositories with large number of dependencies</li>
+                <li>once updates are found, dependabot will update all of them</li>
+                <li>this can spam a large number of pull requests into the queue</li>
+                <li>setting open-pull-requests-limit can cut down on this spam</li>
+                <li>setting the schedule for checking updates can also help make dependabot prs more predictable</li>
+                <li>if set too large though, more updates will be found, so more prs generated</li>
+                <li>use a combination of pr limit and schedule to keep this problem from getting out of hand</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
+                <${ListItem} color="secondary">modular packages create multiple pull requests</${ListItem}>
+                <${ListItem} color="secondary">aws-sdk and spring are examples</${ListItem}>
+                <${ListItem} color="secondary">have to find the pr that updates all of them</${ListItem}>
+                <${ListItem} color="secondary">rebase hell potential</${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>modular package updates</h3>
+              <ul>
+                <li>packages like the modular aws-sdk or other libraries that vend multiple packages</li>
+                <li>can break how dependabot does dependency upgrading</li>
+                <li>it will commonly open 1 pr for each package</li>
+                <li>if the version changed across the library, that will mean multiple prs</li>
+                <li>and some of those prs might update more than one package</li>
+                <li>so we have to go find the one that updates the largest set of them</li>
+                <li>and prevent rebase hell because if we merge a smaller subset</li>
+                <li>dependabot will have to rebase all of prs that contain a larger subset</li>
+                <li>if we merge the largest subset, it will close all the other ones</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${UnorderedList}>
+                <${ListItem} color="secondary">dependabot creates prs from a fork</${ListItem}>
+                <${ListItem} color="secondary">actions using secrets will fail</${ListItem}>
+                <${ListItem} color="secondary">one way is to use <${CodeSpan} color="quaternary">worflow_run</${CodeSpan}> trigger</${ListItem}>
+              </${UnorderedList}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>dealing with github actions</h3>
+              <ul>
+                <li>dependabot creates prs as if it was creating them from a fork</li>
+                <li>repository secrets aren't passed to a fork since that would be a security issue</li>
+                <li>dependabot can't read repository secrets but github actions on dependabot prs use the dependabot github token</li>
+                <li>github actions can't read dependabot secrets, only repository secrets</li>
+                <li>this leads to an issue where github actions using secrets will fail</li>
+                <li>a good way to get around this is to use a conbination of workflow_run trigger</li>
+                <li>and the upload-artifacts action</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${CodePane} highlightRanges=${githubActionSampleRanges} language="yml" showLineNumbers=${true} theme=${codeTheme}>
+                ${githubActionSample}
+              </${CodePane}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>github actions setup</h3>
+              <ul>
+                <li>the first workflow (triggered by dependabot) can just do the initial build</li>
+                <li>then we use the workflow_run trigger on success of the build workflow</li>
+                <li>to trigger a test workflow that can use secrets</li>
+                <li>the only thing to keep in mind is to match the name of the workflow</li>
+                <li>in the workflow file as well as the dependent workflow trigger section</li>
+              </ul>
+            </${Notes}>
+          </${Slide}>
+
+          <${Slide} backgroundColor="background">
+            <${FlexBox} height="100%" flexDirection="column">
+              <${CodePane} highlightRanges=${uploadArtifactsSampleRanges} language="yml" showLineNumbers=${true} theme=${codeTheme}>
+                ${uploadArtifactsSample}
+              </${CodePane}>
+            </${FlexBox}>
+            <${Notes}>
+              <h3>github actions setup part 2</h3>
+              <ul>
+                <li>upload any artifacts from one workflow to make them available for subsequent workflows</li>
+                <li>then use the download artifacts step to download artifacts from other workflows</li>
+                <li>the workflow names have to match</li>
+                <li>the artifact names have to match</li>
+                <li>can zip up multiple artifacts into a tarball</li>
+                <li>and then after download, can unzip the tarball</li>
               </ul>
             </${Notes}>
           </${Slide}>
