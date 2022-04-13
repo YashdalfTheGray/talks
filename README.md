@@ -44,9 +44,11 @@ Home to various talks, proposed ideas and abstracts.
 - [Presentation](https://yashdalfthegray.github.io/talks/oss)
 - [Presentation Notes](https://yashdalfthegray.github.io/talks/oss/notes)
 
-## Depend on Dependabot
+## Dependable Dependabot
 
-- [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/dependabot/README.md)
+- [Abstract](https://github.com/YashdalfTheGray/talks/dependabot/abstract)
+- [Presentation](https://yashdalfthegray.github.io/talks/dependabot)
+- [Presentation Notes](https://yashdalfthegray.github.io/talks/dependabot/notes)
 
 ## Test all the Javascript
 
