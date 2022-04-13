@@ -46,7 +46,7 @@ Home to various talks, proposed ideas and abstracts.
 
 ## Dependable Dependabot
 
-- [Abstract](https://github.com/YashdalfTheGray/talks/dependabot/abstract)
+- [Abstract](https://yashdalfthegray.github.io/talks/dependabot/abstract)
 - [Presentation](https://yashdalfthegray.github.io/talks/dependabot)
 - [Presentation Notes](https://yashdalfthegray.github.io/talks/dependabot/notes)
 
