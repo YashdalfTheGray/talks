@@ -8,6 +8,9 @@
 
 ## Overview
 
+- [Dependabot comes out of preview](https://github.blog/2021-04-29-goodbye-dependabot-preview-hello-dependabot/)
+- [Keeping packages updated](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/)
+
 ## Language support
 
 - [Supported ecosystems](https://docs.github.com/en/enterprise-server@3.4/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#package-ecosystem)
@@ -23,6 +26,10 @@
 ## Other options
 
 - [There is a lot of configuration that you can customize](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)
+
+## Secrets
+
+- [Dependabot only has read-only access to your repository](https://securitylab.github.com/research/github-actions-preventing-pwn-requests/)
 
 ## Example Pull Request
 
