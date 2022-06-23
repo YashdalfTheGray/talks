@@ -206,3 +206,9 @@ export default class App extends Component {
   }
 }
 ```
+
+## Resources
+
+- https://parceljs.org/getting-started/webapp/
+- https://preactjs.com/guide/v10/getting-started/
+- https://www.youtube.com/watch?v=_JZom_gVfuw
