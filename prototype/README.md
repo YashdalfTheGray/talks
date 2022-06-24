@@ -68,6 +68,18 @@ There are some changes, listed below, that need to be made to `package.json`, th
 }
 ```
 
+We'll also modify the scripts section to include the parcel specific scripts.
+
+```json
+{
+  "scripts": {
+    "test": "parcel",
+    "start": "parcel",
+    "build": "parcel build"
+  }
+}
+```
+
 In addition to that, you're going to want to remove your `main` key from the file.
 
 ### `index.html`
