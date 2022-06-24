@@ -59,7 +59,6 @@ There are some changes, listed below, that need to be made to `package.json`, th
 
 ```json
 {
-  // rest of the package.json file
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "src/index.html",
   "alias": {
@@ -238,6 +237,6 @@ export default class App extends Component {
 
 ## Resources
 
-- https://parceljs.org/getting-started/webapp/
-- https://preactjs.com/guide/v10/getting-started/
-- https://www.youtube.com/watch?v=_JZom_gVfuw
+- [Parcel getting started](https://parceljs.org/getting-started/webapp/)
+- [Preact getting started](https://preactjs.com/guide/v10/getting-started/)
+- [Culture](https://www.youtube.com/watch?v=_JZom_gVfuw)

@@ -50,6 +50,10 @@ Home to various talks, proposed ideas and abstracts.
 - [Presentation](https://yashdalfthegray.github.io/talks/dependabot)
 - [Presentation Notes](https://yashdalfthegray.github.io/talks/dependabot/notes)
 
+## Rapid UI Prototyping
+
+- [Presentation notes](https://yashdalfthegray.github.io/talks/prototype)
+
 ## Test all the Javascript
 
 - [Abstract](https://github.com/YashdalfTheGray/talks/blob/master/testing/README.md)
