@@ -53,6 +53,23 @@ tree -I node_modules
 
 ## Adding some code
 
+### `package.json`
+
+There are some changes, listed below, that need to be made to `package.json`, these are just additive changes
+
+```json
+{
+  // rest of the package.json file
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": "src/index.html",
+  "alias": {
+    "preact/jsx-dev-runtime": "preact/jsx-runtime"
+  }
+}
+```
+
+In addition to that, you're going to want to remove your `main` key from the file.
+
 ### `index.html`
 
 ```html
